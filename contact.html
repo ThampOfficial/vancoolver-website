@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="th" class="lang-th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vancoolver — ติดต่อเรา</title>
+<meta name="description" content="ช่องทางติดต่อ Vancoolver — LINE, Facebook Messenger, อีเมล และโทรศัพท์">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Vanco<em>ol</em>ver</a>
+    <nav class="nav-links">
+      <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
+      <a href="students.html"><span class="th">นักเรียน/ผู้ย้ายมาใหม่</span><span class="en">Students &amp; newcomers</span></a>
+      <a href="furniture.html"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
+      <a href="costco.html"><span class="th">ช้อป Costco</span><span class="en">Costco shopping</span></a>
+      <a href="attractions.html"><span class="th">ที่เที่ยว</span><span class="en">Attractions</span></a>
+      <a href="contact.html" class="current"><span class="th">ติดต่อเรา</span><span class="en">Contact</span></a>
+    </nav>
+    <div class="lang-toggle">
+      <button type="button" data-lang="th" class="active">ไทย</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="kicker">
+      <span class="th">ติดต่อ Vancoolver</span>
+      <span class="en">Get in touch with Vancoolver</span>
+    </div>
+    <h1 class="headline">
+      <span class="th">เลือกช่องทางที่<span class="accent">สะดวกที่สุด</span></span>
+      <span class="en">Reach us <span class="accent">however's easiest</span></span>
+    </h1>
+    <p class="sub">
+      <span class="th">ไม่ว่าจะสอบถามเรื่องหาบ้าน ประกอบเฟอร์นิเจอร์ ทริปช้อป Costco หรือที่เที่ยว ทักมาได้ทุกช่องทางด้านล่าง</span>
+      <span class="en">Whether it's about housing, furniture assembly, a Costco trip, or travel tips — reach out through any channel below.</span>
+    </p>
+  </section>
+
+  <section class="contact wrap">
+    <div class="contact-grid">
+      <a class="contact-card" href="https://line.me/ti/p/~vancoolver" target="_blank" rel="noopener">
+        <div class="ch-name">LINE</div>
+        <div class="ch-detail">@vancoolver</div>
+      </a>
+      <a class="contact-card" href="https://m.me/vancoolver" target="_blank" rel="noopener">
+        <div class="ch-name">Facebook Messenger</div>
+        <div class="ch-detail">facebook.com/vancoolver</div>
+      </a>
+      <a class="contact-card" href="mailto:hello@vancoolver.ca">
+        <div class="ch-name"><span class="th">อีเมล</span><span class="en">Email</span></div>
+        <div class="ch-detail">hello@vancoolver.ca</div>
+      </a>
+      <a class="contact-card" href="tel:+16045550123">
+        <div class="ch-name"><span class="th">โทร / WhatsApp</span><span class="en">Phone / WhatsApp</span></div>
+        <div class="ch-detail">+1 (604) 555-0123</div>
+      </a>
+    </div>
+    <p class="contact-note">
+      <span class="th">สำหรับบริการรับส่งสนามบิน กรุณาเตรียมเบอร์ไฟลท์และวันเวลาที่เครื่องลงมาด้วยตอนติดต่อ</span>
+      <span class="en">For airport pickup, please have your flight number and arrival date/time ready when you reach out.</span>
+    </p>
+  </section>
+
+  <!-- GENERAL INQUIRY FORM -->
+  <section id="request" class="request wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="th">หรือฝากข้อความไว้</span><span class="en">Or leave a message</span></div>
+      <h2><span class="th">ส่งข้อความถึงเรา</span><span class="en">Send us a message</span></h2>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-top">
+        <h2><span class="th">แบบฟอร์มติดต่อ</span><span class="en">Contact form</span></h2>
+        <span class="tag"><span class="th">ตอบกลับภายใน 1 วัน</span><span class="en">We reply within a day</span></span>
+      </div>
+      <form class="request-form" id="contactForm">
+        <div class="field-row">
+          <div class="field">
+            <label for="name"><span class="th">ชื่อ</span><span class="en">Name</span></label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="field">
+            <label for="contact"><span class="th">LINE ID หรือเบอร์ติดต่อกลับ</span><span class="en">LINE ID or phone to reach you</span></label>
+            <input type="text" id="contact" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="topic"><span class="th">ต้องการสอบถามเรื่อง</span><span class="en">What's this about</span></label>
+          <select id="topic">
+            <option value="Students/newcomers">Students &amp; newcomers / นักเรียน-ผู้ย้ายมาใหม่</option>
+            <option value="Furniture assembly">Furniture assembly / ประกอบเฟอร์นิเจอร์</option>
+            <option value="Costco shopping">Costco shopping / ช้อป Costco</option>
+            <option value="Attractions/travel">Attractions &amp; travel / ที่เที่ยว</option>
+            <option value="Other">Other / อื่น ๆ</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message"><span class="th">ข้อความ</span><span class="en">Message</span></label>
+          <textarea id="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid">
+          <span class="th">ส่งข้อความ</span><span class="en">Send message</span>
+        </button>
+        <div class="confirm-msg" id="confirmMsg">
+          <span class="th">เปิดอีเมลให้แล้ว กรุณากดส่งในแอปอีเมลของคุณเพื่อยืนยัน</span>
+          <span class="en">Your email app should be open — please hit send there to confirm.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Vancoolver — Vancouver, BC, Canada</span>
+    <span><span class="th">ทำด้วยใจ สำหรับคนไทยไกลบ้าน</span><span class="en">Made with care, for Thais far from home</span></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  sendAsEmail(
+    document.getElementById('contactForm'),
+    document.getElementById('confirmMsg'),
+    'ข้อความจากเว็บไซต์ Vancoolver',
+    'Message from the Vancoolver website',
+    [
+      ['ชื่อ','Name','name'],
+      ['ช่องทางติดต่อกลับ','Contact (LINE/phone)','contact'],
+      ['เรื่อง','Topic','topic'],
+      ['ข้อความ','Message','message'],
+    ]
+  );
+</script>
+</body>
+</html>
