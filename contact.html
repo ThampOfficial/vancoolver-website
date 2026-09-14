@@ -4,11 +4,184 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vancoolver — ติดต่อเรา</title>
-<meta name="description" content="ช่องทางติดต่อ Vancoolver — LINE, Facebook Messenger, อีเมล และโทรศัพท์">
+<meta name="description" content="ช่องทางติดต่อ Vancoolver — LINE, อีเมล และ TikTok">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<style>
+:root{
+  --paper:#EEF1EA;
+  --paper-2:#E6E9DF;
+  --ink:#1E2A26;
+  --forest:#26453D;
+  --forest-2:#1B322C;
+  --mist:#7F93A0;
+  --lantern:#E2A63B;
+  --lantern-2:#C98B23;
+  --rain:#CBD0C4;
+  --white:#FBFAF6;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Sarabun',sans-serif;font-weight:400;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{
+  font-family:'Taviraj',serif;font-weight:500;line-height:1.25;margin:0;color:var(--forest-2);
+}
+a{color:inherit;}
+img,svg{display:block;max-width:100%;}
+.en{display:none;}
+html.lang-en .en{display:inline;}
+html.lang-en .th{display:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+/* ---------- Header ---------- */
+header.site{
+  position:sticky;top:0;z-index:40;background:rgba(238,241,234,0.92);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rain);
+}
+.header-inner{
+  position:relative;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 28px;max-width:1080px;margin:0 auto;gap:20px;
+}
+.logo{font-family:'Taviraj',serif;font-size:1.35rem;font-weight:600;color:var(--forest-2);text-decoration:none;flex-shrink:0;}
+.logo em{font-style:italic;color:var(--lantern-2);}
+.nav-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+.nav-links a{font-size:0.88rem;text-decoration:none;color:var(--forest-2);border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap;}
+.nav-links a.current{border-bottom-color:var(--lantern-2);color:var(--lantern-2);}
+.nav-links a:hover{border-bottom-color:var(--lantern);}
+.lang-toggle{display:flex;border:1px solid var(--forest-2);border-radius:999px;overflow:hidden;font-size:0.82rem;flex-shrink:0;}
+.lang-toggle button{background:none;border:none;padding:6px 14px;cursor:pointer;font-family:'Sarabun',sans-serif;color:var(--forest-2);}
+.lang-toggle button.active{background:var(--forest-2);color:var(--white);}
+.nav-toggle{
+  display:none;background:none;border:1px solid var(--forest-2);border-radius:4px;
+  padding:7px 9px;cursor:pointer;color:var(--forest-2);flex-shrink:0;
+}
+.nav-toggle svg{display:block;width:20px;height:20px;}
+@media (max-width:900px){
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+  .nav-links{
+    display:none;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--paper);border-bottom:1px solid var(--rain);
+    flex-direction:column;align-items:flex-start;
+    padding:16px 28px 22px;gap:16px;
+    box-shadow:0 8px 16px rgba(0,0,0,0.06);
+  }
+  .nav-links.open{display:flex;}
+}
+
+/* ---------- Hero ---------- */
+.hero{padding:70px 0 20px;}
+.hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;}
+@media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
+.kicker{color:var(--mist);font-size:0.98rem;margin-bottom:14px;}
+h1.headline{font-size:clamp(2.0rem, 4.2vw, 3.1rem);color:var(--forest-2);max-width:22ch;}
+h1.headline .accent{color:var(--lantern-2);font-style:italic;}
+.sub{margin-top:20px;font-size:1.05rem;max-width:58ch;}
+.hero-ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+
+.btn{display:inline-block;padding:13px 26px;border-radius:3px;text-decoration:none;font-size:0.98rem;font-weight:500;border:1px solid var(--forest-2);transition:transform .15s ease, background .15s ease;}
+.btn-solid{background:var(--forest-2);color:var(--white);border:none;cursor:pointer;}
+.btn-solid:hover{background:var(--forest);}
+.btn-line{border-color:var(--forest-2);color:var(--forest-2);}
+.btn-line:hover{background:var(--forest-2);color:var(--white);}
+.btn:active{transform:scale(0.98);}
+
+/* ---------- Section head ---------- */
+.section-head{max-width:60ch;margin-bottom:44px;}
+.section-head h2{font-size:clamp(1.5rem,2.8vw,2.1rem);}
+
+/* ---------- Timeline / stops (journey + homepage destination list) ---------- */
+.stops{position:relative;border-left:2px dashed var(--mist);margin-left:14px;padding-left:38px;}
+.stop{position:relative;padding-bottom:52px;}
+.stop:last-child{padding-bottom:0;}
+.stop::before{
+  content:"";position:absolute;left:-46px;top:4px;width:14px;height:14px;border-radius:50%;
+  background:var(--lantern);border:3px solid var(--paper);outline:2px solid var(--forest-2);
+}
+.stop .stop-name{color:var(--mist);font-size:0.92rem;margin-bottom:6px;}
+.stop h3{font-size:1.3rem;margin-bottom:10px;}
+.stop p{margin:0;max-width:56ch;color:var(--ink);}
+.stop a.stop-link{text-decoration:none;color:inherit;display:block;}
+.stop a.stop-link:hover h3{color:var(--lantern-2);}
+.stop .go{display:inline-block;margin-top:10px;font-size:0.88rem;color:var(--lantern-2);}
+
+/* ---------- Dark band (settling-in / costco) ---------- */
+.band-dark{padding:70px 0;background:var(--forest-2);color:var(--white);}
+.band-dark h2{color:var(--white);}
+.band-dark .kicker{color:#B9CFC5;}
+.band-dark p{color:#DCE6DE;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:44px;align-items:start;}
+@media (max-width:800px){ .two-col{grid-template-columns:1fr;} }
+.checklist{list-style:none;margin:0;padding:0;}
+.checklist li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);display:flex;gap:12px;align-items:baseline;}
+.checklist li:last-child{border-bottom:none;}
+.checklist .mark{color:var(--lantern);flex-shrink:0;}
+.subhead-white{color:var(--white);font-size:1.15rem;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:12px;}
+.note-box{margin-top:26px;border:1px solid rgba(255,255,255,0.3);padding:16px 18px;font-size:0.92rem;color:#DCE6DE;}
+
+/* ---------- Spot list (attractions) ---------- */
+.spot-list{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rain);}
+.spot{display:grid;grid-template-columns:60px 1fr;gap:26px;padding:26px 0;border-bottom:1px solid var(--rain);}
+.spot .spot-mark{font-family:'Taviraj',serif;font-style:italic;color:var(--mist);font-size:1rem;padding-top:2px;}
+.spot h3{font-size:1.2rem;margin-bottom:8px;}
+.spot p{margin:0;max-width:58ch;}
+.spot .tag-line{font-size:0.85rem;color:var(--lantern-2);margin-top:8px;}
+
+/* ---------- Ticket / form ---------- */
+.request{padding:78px 0;}
+.ticket{background:var(--white);border:1px solid var(--forest-2);position:relative;box-shadow:6px 6px 0 var(--lantern);}
+.ticket-top{padding:30px 34px 22px;border-bottom:1px dashed var(--forest-2);display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.ticket-top h2{font-size:1.5rem;}
+.ticket-top .tag{font-size:0.85rem;color:var(--mist);border:1px solid var(--mist);padding:4px 10px;border-radius:999px;white-space:nowrap;}
+form.request-form{padding:30px 34px 34px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media (max-width:600px){ .field-row{grid-template-columns:1fr;} }
+.field{margin-bottom:20px;}
+.field label{display:block;font-size:0.9rem;color:var(--mist);margin-bottom:6px;}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 12px;border:1px solid var(--rain);border-radius:2px;
+  background:var(--paper);font-family:'Sarabun',sans-serif;font-size:0.98rem;color:var(--ink);
+}
+.field textarea{resize:vertical;min-height:90px;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--lantern);outline-offset:1px;border-color:var(--forest-2);}
+.confirm-msg{margin-top:16px;padding:12px 16px;background:#EAF3EC;border:1px solid var(--forest);color:var(--forest-2);font-size:0.92rem;display:none;}
+.confirm-msg.show{display:block;}
+
+/* ---------- Contact ---------- */
+.contact{padding:20px 0 90px;}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
+@media (max-width:700px){ .contact-grid{grid-template-columns:1fr;} }
+.contact-card{border:1px solid var(--forest-2);padding:24px 20px;text-decoration:none;color:var(--ink);transition:background .15s ease;}
+.contact-card:hover{background:var(--paper-2);}
+.contact-card .ch-icon{margin-bottom:14px;}
+.contact-card .ch-name{font-family:'Taviraj',serif;font-size:1.1rem;color:var(--forest-2);margin-bottom:6px;}
+.contact-card .ch-detail{font-size:0.9rem;color:var(--ink);}
+.contact-note{margin-top:34px;font-size:0.92rem;color:var(--mist);max-width:60ch;}
+
+/* ---------- Cross-link banner ---------- */
+.cross-link{
+  border:1px dashed var(--forest-2);padding:22px 26px;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:14px;margin:0 0 10px;
+}
+.cross-link p{margin:0;max-width:56ch;}
+
+footer{padding:30px 0;border-top:1px solid var(--rain);font-size:0.85rem;color:var(--mist);}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* hero route illustration (home page) */
+.route-art svg{width:100%;height:auto;}
+#flightpath{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2.1s ease forwards 0.3s;}
+@media (prefers-reduced-motion: reduce){ #flightpath{animation:none;stroke-dashoffset:0;} }
+@keyframes draw{ to{stroke-dashoffset:0;} }
+
+</style>
 </head>
 <body>
 
@@ -19,6 +192,7 @@
       <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
       <a href="students.html"><span class="th">นักเรียน/ผู้ย้ายมาใหม่</span><span class="en">Students &amp; newcomers</span></a>
       <a href="furniture.html"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
+      <a href="simcard.html"><span class="th">ซิมการ์ด</span><span class="en">SIM card</span></a>
       <a href="costco.html"><span class="th">ช้อป Costco</span><span class="en">Costco shopping</span></a>
       <a href="attractions.html"><span class="th">ที่เที่ยว</span><span class="en">Attractions</span></a>
       <a href="contact.html" class="current"><span class="th">ติดต่อเรา</span><span class="en">Contact</span></a>
@@ -27,6 +201,9 @@
       <button type="button" data-lang="th" class="active">ไทย</button>
       <button type="button" data-lang="en">EN</button>
     </div>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
 </header>
 
@@ -49,21 +226,20 @@
 
   <section class="contact wrap">
     <div class="contact-grid">
-      <a class="contact-card" href="https://line.me/ti/p/~vancoolver" target="_blank" rel="noopener">
+      <a class="contact-card" href="https://line.me/ti/p/~umw4521u" target="_blank" rel="noopener">
+        <div class="ch-icon"><svg viewBox="0 0 32 32" width="32" height="32"><rect x="4" y="6" width="24" height="17" rx="8" fill="var(--forest-2)"/><path d="M10 23l-2 5 6-5" fill="var(--forest-2)"/><circle cx="11" cy="14.5" r="1.6" fill="var(--white)"/><circle cx="16" cy="14.5" r="1.6" fill="var(--white)"/><circle cx="21" cy="14.5" r="1.6" fill="var(--white)"/></svg></div>
         <div class="ch-name">LINE</div>
-        <div class="ch-detail">@vancoolver</div>
+        <div class="ch-detail">@umw4521u</div>
       </a>
-      <a class="contact-card" href="https://m.me/vancoolver" target="_blank" rel="noopener">
-        <div class="ch-name">Facebook Messenger</div>
-        <div class="ch-detail">facebook.com/vancoolver</div>
-      </a>
-      <a class="contact-card" href="mailto:hello@vancoolver.ca">
+      <a class="contact-card" href="mailto:vancoolver.official@outlook.com">
+        <div class="ch-icon"><svg viewBox="0 0 24 24" width="30" height="30"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="var(--forest-2)" stroke-width="2"/><path d="M4 6l8 7 8-7" fill="none" stroke="var(--forest-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="ch-name"><span class="th">อีเมล</span><span class="en">Email</span></div>
-        <div class="ch-detail">hello@vancoolver.ca</div>
+        <div class="ch-detail">vancoolver.official@outlook.com</div>
       </a>
-      <a class="contact-card" href="tel:+16045550123">
-        <div class="ch-name"><span class="th">โทร / WhatsApp</span><span class="en">Phone / WhatsApp</span></div>
-        <div class="ch-detail">+1 (604) 555-0123</div>
+      <a class="contact-card" href="https://www.tiktok.com/@vancoolver3?_r=1&_t=ZS-99iXUeNGJec" target="_blank" rel="noopener">
+        <div class="ch-icon"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M9 17V5l10-2v12" fill="none" stroke="var(--forest-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="17" r="3" fill="none" stroke="var(--forest-2)" stroke-width="2"/><circle cx="17" cy="15" r="3" fill="none" stroke="var(--forest-2)" stroke-width="2"/></svg></div>
+        <div class="ch-name">TikTok</div>
+        <div class="ch-detail">@vancoolver3</div>
       </a>
     </div>
     <p class="contact-note">
@@ -128,7 +304,42 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const langButtons = document.querySelectorAll('.lang-toggle button');
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.documentElement.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.setAttribute('lang', lang);
+      langButtons.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinksEl = document.querySelector('.nav-links');
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+  }
+});
+
+/* Builds a mailto: link from a form's fields and opens it.
+   fields = [[labelTh, labelEn, elementId], ...] */
+function sendAsEmail(formEl, confirmEl, subjectTh, subjectEn, fields) {
+  formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const isEn = document.documentElement.classList.contains('lang-en');
+    const val = id => (document.getElementById(id) && document.getElementById(id).value) || '-';
+    const subject = isEn ? subjectEn : subjectTh;
+    const bodyLines = fields.map(([labelTh, labelEn, id]) => `${isEn ? labelEn : labelTh}: ${val(id)}`);
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = `mailto:vancoolver.official@outlook.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    if (confirmEl) confirmEl.classList.add('show');
+  });
+}
+
+</script>
 <script>
   sendAsEmail(
     document.getElementById('contactForm'),

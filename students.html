@@ -8,7 +8,185 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<style>
+:root{
+  --paper:#EEF1EA;
+  --paper-2:#E6E9DF;
+  --ink:#1E2A26;
+  --forest:#26453D;
+  --forest-2:#1B322C;
+  --mist:#7F93A0;
+  --lantern:#E2A63B;
+  --lantern-2:#C98B23;
+  --rain:#CBD0C4;
+  --white:#FBFAF6;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Sarabun',sans-serif;font-weight:400;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{
+  font-family:'Taviraj',serif;font-weight:500;line-height:1.25;margin:0;color:var(--forest-2);
+}
+a{color:inherit;}
+img,svg{display:block;max-width:100%;}
+.en{display:none;}
+html.lang-en .en{display:inline;}
+html.lang-en .th{display:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+/* ---------- Header ---------- */
+header.site{
+  position:sticky;top:0;z-index:40;background:rgba(238,241,234,0.92);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rain);
+}
+.header-inner{
+  position:relative;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 28px;max-width:1080px;margin:0 auto;gap:20px;
+}
+.logo{font-family:'Taviraj',serif;font-size:1.35rem;font-weight:600;color:var(--forest-2);text-decoration:none;flex-shrink:0;}
+.logo em{font-style:italic;color:var(--lantern-2);}
+.nav-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+.nav-links a{font-size:0.88rem;text-decoration:none;color:var(--forest-2);border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap;}
+.nav-links a.current{border-bottom-color:var(--lantern-2);color:var(--lantern-2);}
+.nav-links a:hover{border-bottom-color:var(--lantern);}
+.lang-toggle{display:flex;border:1px solid var(--forest-2);border-radius:999px;overflow:hidden;font-size:0.82rem;flex-shrink:0;}
+.lang-toggle button{background:none;border:none;padding:6px 14px;cursor:pointer;font-family:'Sarabun',sans-serif;color:var(--forest-2);}
+.lang-toggle button.active{background:var(--forest-2);color:var(--white);}
+.nav-toggle{
+  display:none;background:none;border:1px solid var(--forest-2);border-radius:4px;
+  padding:7px 9px;cursor:pointer;color:var(--forest-2);flex-shrink:0;
+}
+.nav-toggle svg{display:block;width:20px;height:20px;}
+@media (max-width:900px){
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+  .nav-links{
+    display:none;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--paper);border-bottom:1px solid var(--rain);
+    flex-direction:column;align-items:flex-start;
+    padding:16px 28px 22px;gap:16px;
+    box-shadow:0 8px 16px rgba(0,0,0,0.06);
+  }
+  .nav-links.open{display:flex;}
+}
+
+/* ---------- Hero ---------- */
+.hero{padding:70px 0 20px;}
+.hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;}
+@media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
+.kicker{color:var(--mist);font-size:0.98rem;margin-bottom:14px;}
+h1.headline{font-size:clamp(2.0rem, 4.2vw, 3.1rem);color:var(--forest-2);max-width:22ch;}
+h1.headline .accent{color:var(--lantern-2);font-style:italic;}
+.sub{margin-top:20px;font-size:1.05rem;max-width:58ch;}
+.hero-ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+
+.btn{display:inline-block;padding:13px 26px;border-radius:3px;text-decoration:none;font-size:0.98rem;font-weight:500;border:1px solid var(--forest-2);transition:transform .15s ease, background .15s ease;}
+.btn-solid{background:var(--forest-2);color:var(--white);border:none;cursor:pointer;}
+.btn-solid:hover{background:var(--forest);}
+.btn-line{border-color:var(--forest-2);color:var(--forest-2);}
+.btn-line:hover{background:var(--forest-2);color:var(--white);}
+.btn:active{transform:scale(0.98);}
+
+/* ---------- Section head ---------- */
+.section-head{max-width:60ch;margin-bottom:44px;}
+.section-head h2{font-size:clamp(1.5rem,2.8vw,2.1rem);}
+
+/* ---------- Timeline / stops (journey + homepage destination list) ---------- */
+.stops{position:relative;border-left:2px dashed var(--mist);margin-left:14px;padding-left:38px;}
+.stop{position:relative;padding-bottom:52px;}
+.stop:last-child{padding-bottom:0;}
+.stop::before{
+  content:"";position:absolute;left:-46px;top:4px;width:14px;height:14px;border-radius:50%;
+  background:var(--lantern);border:3px solid var(--paper);outline:2px solid var(--forest-2);
+}
+.stop .stop-name{color:var(--mist);font-size:0.92rem;margin-bottom:6px;}
+.stop h3{font-size:1.3rem;margin-bottom:10px;}
+.stop p{margin:0;max-width:56ch;color:var(--ink);}
+.stop a.stop-link{text-decoration:none;color:inherit;display:block;}
+.stop a.stop-link:hover h3{color:var(--lantern-2);}
+.stop .go{display:inline-block;margin-top:10px;font-size:0.88rem;color:var(--lantern-2);}
+
+/* ---------- Dark band (settling-in / costco) ---------- */
+.band-dark{padding:70px 0;background:var(--forest-2);color:var(--white);}
+.band-dark h2{color:var(--white);}
+.band-dark .kicker{color:#B9CFC5;}
+.band-dark p{color:#DCE6DE;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:44px;align-items:start;}
+@media (max-width:800px){ .two-col{grid-template-columns:1fr;} }
+.checklist{list-style:none;margin:0;padding:0;}
+.checklist li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);display:flex;gap:12px;align-items:baseline;}
+.checklist li:last-child{border-bottom:none;}
+.checklist .mark{color:var(--lantern);flex-shrink:0;}
+.subhead-white{color:var(--white);font-size:1.15rem;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:12px;}
+.note-box{margin-top:26px;border:1px solid rgba(255,255,255,0.3);padding:16px 18px;font-size:0.92rem;color:#DCE6DE;}
+
+/* ---------- Spot list (attractions) ---------- */
+.spot-list{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rain);}
+.spot{display:grid;grid-template-columns:60px 1fr;gap:26px;padding:26px 0;border-bottom:1px solid var(--rain);}
+.spot .spot-mark{font-family:'Taviraj',serif;font-style:italic;color:var(--mist);font-size:1rem;padding-top:2px;}
+.spot h3{font-size:1.2rem;margin-bottom:8px;}
+.spot p{margin:0;max-width:58ch;}
+.spot .tag-line{font-size:0.85rem;color:var(--lantern-2);margin-top:8px;}
+
+/* ---------- Ticket / form ---------- */
+.request{padding:78px 0;}
+.ticket{background:var(--white);border:1px solid var(--forest-2);position:relative;box-shadow:6px 6px 0 var(--lantern);}
+.ticket-top{padding:30px 34px 22px;border-bottom:1px dashed var(--forest-2);display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.ticket-top h2{font-size:1.5rem;}
+.ticket-top .tag{font-size:0.85rem;color:var(--mist);border:1px solid var(--mist);padding:4px 10px;border-radius:999px;white-space:nowrap;}
+form.request-form{padding:30px 34px 34px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media (max-width:600px){ .field-row{grid-template-columns:1fr;} }
+.field{margin-bottom:20px;}
+.field label{display:block;font-size:0.9rem;color:var(--mist);margin-bottom:6px;}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 12px;border:1px solid var(--rain);border-radius:2px;
+  background:var(--paper);font-family:'Sarabun',sans-serif;font-size:0.98rem;color:var(--ink);
+}
+.field textarea{resize:vertical;min-height:90px;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--lantern);outline-offset:1px;border-color:var(--forest-2);}
+.confirm-msg{margin-top:16px;padding:12px 16px;background:#EAF3EC;border:1px solid var(--forest);color:var(--forest-2);font-size:0.92rem;display:none;}
+.confirm-msg.show{display:block;}
+
+/* ---------- Contact ---------- */
+.contact{padding:20px 0 90px;}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px;}
+@media (max-width:860px){ .contact-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:480px){ .contact-grid{grid-template-columns:1fr;} }
+.contact-card{border:1px solid var(--forest-2);padding:24px 20px;text-decoration:none;color:var(--ink);transition:background .15s ease;}
+.contact-card:hover{background:var(--paper-2);}
+.contact-card .ch-name{font-family:'Taviraj',serif;font-size:1.1rem;color:var(--forest-2);margin-bottom:6px;}
+.contact-card .ch-detail{font-size:0.9rem;color:var(--ink);}
+.contact-note{margin-top:34px;font-size:0.92rem;color:var(--mist);max-width:60ch;}
+
+/* ---------- Cross-link banner ---------- */
+.cross-link{
+  border:1px dashed var(--forest-2);padding:22px 26px;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:14px;margin:0 0 10px;
+}
+.cross-link p{margin:0;max-width:56ch;}
+
+footer{padding:30px 0;border-top:1px solid var(--rain);font-size:0.85rem;color:var(--mist);}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* hero route illustration (home page) */
+.route-art svg{width:100%;height:auto;}
+#flightpath{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2.1s ease forwards 0.3s;}
+@media (prefers-reduced-motion: reduce){ #flightpath{animation:none;stroke-dashoffset:0;} }
+@keyframes draw{ to{stroke-dashoffset:0;} }
+
+/* ---------- Expandable pricing ---------- */
+.price-details summary{cursor:pointer;list-style:none;}
+.price-details summary::-webkit-details-marker{display:none;}
+.price-details summary::marker{content:"";}
+
+</style>
 </head>
 <body>
 
@@ -19,6 +197,7 @@
       <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
       <a href="students.html" class="current"><span class="th">นักเรียน/ผู้ย้ายมาใหม่</span><span class="en">Students &amp; newcomers</span></a>
       <a href="furniture.html"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
+      <a href="simcard.html"><span class="th">ซิมการ์ด</span><span class="en">SIM card</span></a>
       <a href="costco.html"><span class="th">ช้อป Costco</span><span class="en">Costco shopping</span></a>
       <a href="attractions.html"><span class="th">ที่เที่ยว</span><span class="en">Attractions</span></a>
       <a href="contact.html"><span class="th">ติดต่อเรา</span><span class="en">Contact</span></a>
@@ -27,6 +206,9 @@
       <button type="button" data-lang="th" class="active">ไทย</button>
       <button type="button" data-lang="en">EN</button>
     </div>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
 </header>
 
@@ -61,19 +243,109 @@
     <div class="stops">
       <div class="stop">
         <div class="stop-name"><span class="th">สนามบิน YVR</span><span class="en">YVR Airport</span></div>
-        <h3><span class="th">รับส่งวันแรกที่มาถึง</span><span class="en">Pickup on your arrival day</span></h3>
+        <h3><span class="th">รับส่งวันแรกที่มาถึง — เลือกได้ 3 แบบ</span><span class="en">Pickup on your arrival day — three ways</span></h3>
         <p>
-          <span class="th">ขับรถไปรับที่สนามบินตามเวลาเครื่องลง แล้วพาเข้าเมืองด้วยรถไฟ SkyTrain พร้อมสอนวิธีซื้อและใช้บัตร Compass Card ตั้งแต่ครั้งแรก</span>
-          <span class="en">We drive to meet you at the airport when your flight lands, then take you into the city by SkyTrain — showing you how to buy and use a Compass Card from day one.</span>
+          <span class="th">ทุกแบบส่งถึงหน้าบ้านของคุณเหมือนกัน ต่างกันแค่วิธีที่เราไปรับและราคา:</span>
+          <span class="en">Every option drops you off right at your door — the difference is how we get to you, and the price:</span>
         </p>
+        <div style="display:inline-block;margin-bottom:6px;font-size:0.85rem;color:var(--lantern-2);border:1px solid var(--lantern-2);padding:4px 12px;border-radius:999px;">
+          <span class="th">เริ่มต้นที่ 20 CAD ต่อเที่ยว</span>
+          <span class="en">Starting at $20 CAD per trip</span>
+        </div>
+        <ul style="margin:14px 0 0 18px;padding:0;">
+          <li style="margin-bottom:8px;">
+            <span class="th"><strong>แบบที่ 1 — ขับรถไปรับ ส่งถึงบ้าน</strong>: ขับรถไปรับที่สนามบินตามเวลาเครื่องลง แล้วขับส่งถึงหน้าบ้านโดยตรง สะดวกที่สุดถ้ามีกระเป๋าเยอะ</span>
+            <span class="en"><strong>Option 1 — Drive to pick you up, drop off at home</strong>: we drive to the airport for your arrival, then drive you straight to your door. Easiest if you have a lot of luggage.</span>
+          </li>
+          <li style="margin-bottom:8px;">
+            <span class="th"><strong>แบบที่ 2 — นั่งรถไฟไปรับ</strong>: เรานั่ง SkyTrain ไปรับคุณที่สนามบิน พาเข้าเมืองด้วยรถไฟพร้อมสอนวิธีใช้บัตร Compass Card แล้วส่งต่อจนถึงบ้าน</span>
+            <span class="en"><strong>Option 2 — Meet you by SkyTrain</strong>: we take the SkyTrain to meet you at the airport, ride back into the city with you (showing you how to use a Compass Card), then get you the rest of the way to your door.</span>
+          </li>
+          <li>
+            <span class="th"><strong>แบบที่ 3 — เจอกันในเมือง ขับรถพาไปบ้าน</strong>: ถ้าคุณเข้าเมืองมาเองได้แล้ว เราแค่ไปรับต่อจากในเมืองแล้วขับพาไปส่งถึงบ้าน ประหยัดที่สุด</span>
+            <span class="en"><strong>Option 3 — Meet in the city, drive you home</strong>: if you've already made it into the city yourself, we just meet you there and drive you the rest of the way home. The cheapest option.</span>
+          </li>
+        </ul>
+        <p style="margin-top:12px;font-size:0.9rem;color:var(--mist);">
+          <span class="th">แจ้งแบบที่ต้องการได้ตอนติดต่อนัดหมายรับ-ส่ง</span>
+          <span class="en">Just let us know which option you'd like when you book your pickup.</span>
+        </p>
+        <details class="price-details" style="margin-top:16px;">
+          <summary class="btn btn-line" style="display:inline-block;">
+            <span class="th">ดูราคาเพิ่มเติม</span><span class="en">See more pricing</span>
+          </summary>
+          <div style="margin-top:16px;border:1px solid var(--rain);padding:18px 20px;background:var(--white);max-width:480px;">
+            <div style="font-size:0.85rem;color:var(--mist);margin-bottom:10px;">
+              <span class="th">ในเขตแวนคูเวอร์ เบอร์นาบี้ และริชมอนด์</span><span class="en">Within Vancouver, Burnaby, and Richmond</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--rain);">
+              <span><span class="th">แบบที่ 1 — ขับรถไปรับ ส่งถึงบ้าน</span><span class="en">Option 1 — Drive &amp; drop off at home</span></span>
+              <strong style="white-space:nowrap;">60 CAD</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--rain);">
+              <span><span class="th">แบบที่ 2 — นั่งรถไฟไปรับ</span><span class="en">Option 2 — Meet by SkyTrain</span></span>
+              <strong style="white-space:nowrap;">40 CAD</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;">
+              <span><span class="th">แบบที่ 3 — เจอกันในเมือง ขับรถพาไปบ้าน</span><span class="en">Option 3 — Meet in the city, drive you home</span></span>
+              <strong style="white-space:nowrap;">20 CAD</strong>
+            </div>
+            <div style="margin-top:12px;font-size:0.85rem;color:var(--mist);">
+              <span class="th">พื้นที่นอกเหนือจากนี้ คิดเพิ่มตามระยะทาง (ต่อกิโลเมตร)</span><span class="en">Areas outside this zone: additional charge per kilometre</span>
+            </div>
+          </div>
+        </details>
       </div>
       <div class="stop">
         <div class="stop-name"><span class="th">หาบ้าน</span><span class="en">House hunting</span></div>
         <h3><span class="th">บอกงบและย่านที่อยากอยู่ เราหาให้</span><span class="en">Tell us your budget and area, we search for you</span></h3>
         <p>
-          <span class="th">กรอกรายละเอียดบ้านที่ต้องการ — ย่าน งบต่อเดือน วันที่ต้องการเข้าอยู่ ประเภทห้อง — เราช่วยหาและติดต่อประสานงานกับเจ้าของบ้านให้</span>
-          <span class="en">Fill in what you're looking for — neighbourhood, monthly budget, move-in date, room type — and we help find and coordinate with landlords on your behalf.</span>
+          <span class="th">กรอกรายละเอียดบ้านที่ต้องการ — ย่าน งบต่อเดือน วันที่ต้องการเข้าอยู่ ประเภทห้อง มีเฟอร์นิเจอร์หรือไม่ — เราช่วยหาและติดต่อประสานงานกับเจ้าของบ้านให้</span>
+          <span class="en">Fill in what you're looking for — neighbourhood, monthly budget, move-in date, room type, and whether you want it furnished — and we help find and coordinate with landlords on your behalf.</span>
         </p>
+        <ul style="margin:14px 0 0 18px;padding:0;">
+          <li style="margin-bottom:8px;">
+            <span class="th"><strong>Furnished หรือ Unfurnished</strong> — เลือกได้ว่าอยากได้ห้องที่มีเฟอร์นิเจอร์พร้อมอยู่ หรือห้องเปล่าที่จัดของเองภายหลัง</span>
+            <span class="en"><strong>Furnished or unfurnished</strong> — choose a place that's move-in ready, or an empty unit you'll furnish yourself later.</span>
+          </li>
+          <li style="margin-bottom:8px;">
+            <span class="th"><strong>ยังไม่พร้อมเข้าบ้านทันที?</strong> — พักโรงแรมไปก่อนระหว่างที่เราช่วยหาบ้านที่ใช่ให้ก็ได้</span>
+            <span class="en"><strong>Not ready to move in right away?</strong> — stay at a hotel first while we help find the right place for you.</span>
+          </li>
+          <li>
+            <span class="th"><strong>ตรวจสอบสัญญาเช่าให้</strong> — ก่อนเซ็นสัญญา เราช่วยอ่านและตรวจรายละเอียดสัญญาเช่าบ้านให้ด้วย</span>
+            <span class="en"><strong>Lease review</strong> — before you sign, we help read through and check the details of your rental agreement.</span>
+          </li>
+        </ul>
+        <p style="margin-top:12px;">
+          <span class="th">ขั้นตอนการหาบ้าน: เราส่งข้อมูลและรูปคร่าวๆ ของบ้านที่ตรงเงื่อนไขให้ก่อน ถ้าคุณสนใจหลังไหน เราไปดูสถานที่จริงให้ พร้อมถ่ายวิดีโอหรือวิดีโอคอลสด และถ่ายรูปเพิ่มเติมมาให้ดู</span>
+          <span class="en">How it works: we first send you rough info and photos of places that match what you're looking for. If you're interested in one, we go see it in person, record a video or do a live video call, and take extra photos for you.</span>
+        </p>
+        <div style="display:inline-block;margin-top:6px;margin-bottom:6px;font-size:0.85rem;color:var(--lantern-2);border:1px solid var(--lantern-2);padding:4px 12px;border-radius:999px;">
+          <span class="th">เริ่มต้นที่ 100 CAD (หรือ 2,500 บาท)</span>
+          <span class="en">Starting at $100 CAD (or 2,500 THB)</span>
+        </div>
+        <div style="margin-top:10px;">
+          <details class="price-details">
+            <summary class="btn btn-line" style="display:inline-block;">
+              <span class="th">ดูราคาเพิ่มเติม</span><span class="en">See more pricing</span>
+            </summary>
+            <div style="margin-top:16px;border:1px solid var(--rain);padding:18px 20px;background:var(--white);max-width:480px;">
+              <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--rain);">
+                <span><span class="th">ดูให้ 3 บ้าน</span><span class="en">Viewings for 3 homes</span></span>
+                <strong style="white-space:nowrap;"><span class="th">100 CAD (2,500 บาท)</span><span class="en">$100 CAD (2,500 THB)</span></strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;">
+                <span><span class="th">ดูให้ 5 บ้าน</span><span class="en">Viewings for 5 homes</span></span>
+                <strong style="white-space:nowrap;"><span class="th">150 CAD (3,750 บาท)</span><span class="en">$150 CAD (3,750 THB)</span></strong>
+              </div>
+              <div style="margin-top:12px;font-size:0.85rem;color:var(--mist);">
+                <span class="th">ทั้งสองแพ็กเกจ: ระยะเวลาทำงาน 1 เดือน และราคานี้รวมบริการตรวจสอบสัญญาเช่าให้ด้วย</span>
+                <span class="en">Both packages: 1 month of active search, and lease contract review is included in the price.</span>
+              </div>
+            </div>
+          </details>
+        </div>
       </div>
       <div class="stop">
         <div class="stop-name"><span class="th">ตั้งต้นใหม่</span><span class="en">Settling in</span></div>
@@ -147,6 +419,23 @@
             </select>
           </div>
         </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="furnished"><span class="th">ต้องการแบบไหน</span><span class="en">Furnishing</span></label>
+            <select id="furnished">
+              <option value="Furnished">Furnished / มีเฟอร์นิเจอร์พร้อมอยู่</option>
+              <option value="Unfurnished">Unfurnished / ห้องเปล่า</option>
+              <option value="Either">Either / แบบไหนก็ได้</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="hotelFirst"><span class="th">ต้องการพักโรงแรมก่อนไหม</span><span class="en">Hotel stay first?</span></label>
+            <select id="hotelFirst">
+              <option value="No">No / ไม่ต้องการ</option>
+              <option value="Yes">Yes / ต้องการพักโรงแรมระหว่างรอ</option>
+            </select>
+          </div>
+        </div>
         <div class="field">
           <label for="notes"><span class="th">รายละเอียดเพิ่มเติม</span><span class="en">Anything else we should know</span></label>
           <textarea id="notes"></textarea>
@@ -170,7 +459,42 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const langButtons = document.querySelectorAll('.lang-toggle button');
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.documentElement.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.setAttribute('lang', lang);
+      langButtons.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinksEl = document.querySelector('.nav-links');
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+  }
+});
+
+/* Builds a mailto: link from a form's fields and opens it.
+   fields = [[labelTh, labelEn, elementId], ...] */
+function sendAsEmail(formEl, confirmEl, subjectTh, subjectEn, fields) {
+  formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const isEn = document.documentElement.classList.contains('lang-en');
+    const val = id => (document.getElementById(id) && document.getElementById(id).value) || '-';
+    const subject = isEn ? subjectEn : subjectTh;
+    const bodyLines = fields.map(([labelTh, labelEn, id]) => `${isEn ? labelEn : labelTh}: ${val(id)}`);
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = `mailto:vancoolver.official@outlook.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    if (confirmEl) confirmEl.classList.add('show');
+  });
+}
+
+</script>
 <script>
   sendAsEmail(
     document.getElementById('housingForm'),
@@ -184,6 +508,8 @@
       ['งบต่อเดือน','Monthly budget','budget'],
       ['วันที่ต้องการเข้าอยู่','Move-in date','movein'],
       ['ประเภทห้อง','Room type','roomtype'],
+      ['ต้องการแบบไหน','Furnishing','furnished'],
+      ['ต้องการพักโรงแรมก่อนไหม','Hotel stay first','hotelFirst'],
       ['รายละเอียดเพิ่มเติม','Notes','notes'],
     ]
   );

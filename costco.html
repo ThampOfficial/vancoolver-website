@@ -8,7 +8,185 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<style>
+:root{
+  --paper:#EEF1EA;
+  --paper-2:#E6E9DF;
+  --ink:#1E2A26;
+  --forest:#26453D;
+  --forest-2:#1B322C;
+  --mist:#7F93A0;
+  --lantern:#E2A63B;
+  --lantern-2:#C98B23;
+  --rain:#CBD0C4;
+  --white:#FBFAF6;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Sarabun',sans-serif;font-weight:400;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{
+  font-family:'Taviraj',serif;font-weight:500;line-height:1.25;margin:0;color:var(--forest-2);
+}
+a{color:inherit;}
+img,svg{display:block;max-width:100%;}
+.en{display:none;}
+html.lang-en .en{display:inline;}
+html.lang-en .th{display:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+/* ---------- Header ---------- */
+header.site{
+  position:sticky;top:0;z-index:40;background:rgba(238,241,234,0.92);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rain);
+}
+.header-inner{
+  position:relative;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 28px;max-width:1080px;margin:0 auto;gap:20px;
+}
+.logo{font-family:'Taviraj',serif;font-size:1.35rem;font-weight:600;color:var(--forest-2);text-decoration:none;flex-shrink:0;}
+.logo em{font-style:italic;color:var(--lantern-2);}
+.nav-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+.nav-links a{font-size:0.88rem;text-decoration:none;color:var(--forest-2);border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap;}
+.nav-links a.current{border-bottom-color:var(--lantern-2);color:var(--lantern-2);}
+.nav-links a:hover{border-bottom-color:var(--lantern);}
+.lang-toggle{display:flex;border:1px solid var(--forest-2);border-radius:999px;overflow:hidden;font-size:0.82rem;flex-shrink:0;}
+.lang-toggle button{background:none;border:none;padding:6px 14px;cursor:pointer;font-family:'Sarabun',sans-serif;color:var(--forest-2);}
+.lang-toggle button.active{background:var(--forest-2);color:var(--white);}
+.nav-toggle{
+  display:none;background:none;border:1px solid var(--forest-2);border-radius:4px;
+  padding:7px 9px;cursor:pointer;color:var(--forest-2);flex-shrink:0;
+}
+.nav-toggle svg{display:block;width:20px;height:20px;}
+@media (max-width:900px){
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+  .nav-links{
+    display:none;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--paper);border-bottom:1px solid var(--rain);
+    flex-direction:column;align-items:flex-start;
+    padding:16px 28px 22px;gap:16px;
+    box-shadow:0 8px 16px rgba(0,0,0,0.06);
+  }
+  .nav-links.open{display:flex;}
+}
+
+/* ---------- Hero ---------- */
+.hero{padding:70px 0 20px;}
+.hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;}
+@media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
+.kicker{color:var(--mist);font-size:0.98rem;margin-bottom:14px;}
+h1.headline{font-size:clamp(2.0rem, 4.2vw, 3.1rem);color:var(--forest-2);max-width:22ch;}
+h1.headline .accent{color:var(--lantern-2);font-style:italic;}
+.sub{margin-top:20px;font-size:1.05rem;max-width:58ch;}
+.hero-ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+
+.btn{display:inline-block;padding:13px 26px;border-radius:3px;text-decoration:none;font-size:0.98rem;font-weight:500;border:1px solid var(--forest-2);transition:transform .15s ease, background .15s ease;}
+.btn-solid{background:var(--forest-2);color:var(--white);border:none;cursor:pointer;}
+.btn-solid:hover{background:var(--forest);}
+.btn-line{border-color:var(--forest-2);color:var(--forest-2);}
+.btn-line:hover{background:var(--forest-2);color:var(--white);}
+.btn:active{transform:scale(0.98);}
+
+/* ---------- Section head ---------- */
+.section-head{max-width:60ch;margin-bottom:44px;}
+.section-head h2{font-size:clamp(1.5rem,2.8vw,2.1rem);}
+
+/* ---------- Timeline / stops (journey + homepage destination list) ---------- */
+.stops{position:relative;border-left:2px dashed var(--mist);margin-left:14px;padding-left:38px;}
+.stop{position:relative;padding-bottom:52px;}
+.stop:last-child{padding-bottom:0;}
+.stop::before{
+  content:"";position:absolute;left:-46px;top:4px;width:14px;height:14px;border-radius:50%;
+  background:var(--lantern);border:3px solid var(--paper);outline:2px solid var(--forest-2);
+}
+.stop .stop-name{color:var(--mist);font-size:0.92rem;margin-bottom:6px;}
+.stop h3{font-size:1.3rem;margin-bottom:10px;}
+.stop p{margin:0;max-width:56ch;color:var(--ink);}
+.stop a.stop-link{text-decoration:none;color:inherit;display:block;}
+.stop a.stop-link:hover h3{color:var(--lantern-2);}
+.stop .go{display:inline-block;margin-top:10px;font-size:0.88rem;color:var(--lantern-2);}
+
+/* ---------- Dark band (settling-in / costco) ---------- */
+.band-dark{padding:70px 0;background:var(--forest-2);color:var(--white);}
+.band-dark h2{color:var(--white);}
+.band-dark .kicker{color:#B9CFC5;}
+.band-dark p{color:#DCE6DE;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:44px;align-items:start;}
+@media (max-width:800px){ .two-col{grid-template-columns:1fr;} }
+.checklist{list-style:none;margin:0;padding:0;}
+.checklist li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);display:flex;gap:12px;align-items:center;}
+.checklist li:last-child{border-bottom:none;}
+.checklist .mark{color:var(--lantern);flex-shrink:0;display:flex;}
+.subhead-white{color:var(--white);font-size:1.15rem;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:12px;}
+.note-box{margin-top:26px;border:1px solid rgba(255,255,255,0.3);padding:16px 18px;font-size:0.92rem;color:#DCE6DE;}
+
+/* ---------- Spot list (attractions) ---------- */
+.spot-list{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rain);}
+.spot{display:grid;grid-template-columns:60px 1fr;gap:26px;padding:26px 0;border-bottom:1px solid var(--rain);}
+.spot .spot-mark{font-family:'Taviraj',serif;font-style:italic;color:var(--mist);font-size:1rem;padding-top:2px;}
+.spot h3{font-size:1.2rem;margin-bottom:8px;}
+.spot p{margin:0;max-width:58ch;}
+.spot .tag-line{font-size:0.85rem;color:var(--lantern-2);margin-top:8px;}
+
+/* ---------- Ticket / form ---------- */
+.request{padding:78px 0;}
+.ticket{background:var(--white);border:1px solid var(--forest-2);position:relative;box-shadow:6px 6px 0 var(--lantern);}
+.ticket-top{padding:30px 34px 22px;border-bottom:1px dashed var(--forest-2);display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.ticket-top h2{font-size:1.5rem;}
+.ticket-top .tag{font-size:0.85rem;color:var(--mist);border:1px solid var(--mist);padding:4px 10px;border-radius:999px;white-space:nowrap;}
+form.request-form{padding:30px 34px 34px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media (max-width:600px){ .field-row{grid-template-columns:1fr;} }
+.field{margin-bottom:20px;}
+.field label{display:block;font-size:0.9rem;color:var(--mist);margin-bottom:6px;}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 12px;border:1px solid var(--rain);border-radius:2px;
+  background:var(--paper);font-family:'Sarabun',sans-serif;font-size:0.98rem;color:var(--ink);
+}
+.field textarea{resize:vertical;min-height:90px;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--lantern);outline-offset:1px;border-color:var(--forest-2);}
+.confirm-msg{margin-top:16px;padding:12px 16px;background:#EAF3EC;border:1px solid var(--forest);color:var(--forest-2);font-size:0.92rem;display:none;}
+.confirm-msg.show{display:block;}
+
+/* ---------- Contact ---------- */
+.contact{padding:20px 0 90px;}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px;}
+@media (max-width:860px){ .contact-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:480px){ .contact-grid{grid-template-columns:1fr;} }
+.contact-card{border:1px solid var(--forest-2);padding:24px 20px;text-decoration:none;color:var(--ink);transition:background .15s ease;}
+.contact-card:hover{background:var(--paper-2);}
+.contact-card .ch-name{font-family:'Taviraj',serif;font-size:1.1rem;color:var(--forest-2);margin-bottom:6px;}
+.contact-card .ch-detail{font-size:0.9rem;color:var(--ink);}
+.contact-note{margin-top:34px;font-size:0.92rem;color:var(--mist);max-width:60ch;}
+
+/* ---------- Cross-link banner ---------- */
+.cross-link{
+  border:1px dashed var(--forest-2);padding:22px 26px;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:14px;margin:0 0 10px;
+}
+.cross-link p{margin:0;max-width:56ch;}
+
+footer{padding:30px 0;border-top:1px solid var(--rain);font-size:0.85rem;color:var(--mist);}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* hero route illustration (home page) */
+.route-art svg{width:100%;height:auto;}
+#flightpath{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2.1s ease forwards 0.3s;}
+@media (prefers-reduced-motion: reduce){ #flightpath{animation:none;stroke-dashoffset:0;} }
+@keyframes draw{ to{stroke-dashoffset:0;} }
+
+/* ---------- Expandable pricing ---------- */
+.price-details summary{cursor:pointer;list-style:none;}
+.price-details summary::-webkit-details-marker{display:none;}
+.price-details summary::marker{content:"";}
+
+</style>
 </head>
 <body>
 
@@ -19,6 +197,7 @@
       <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
       <a href="students.html"><span class="th">นักเรียน/ผู้ย้ายมาใหม่</span><span class="en">Students &amp; newcomers</span></a>
       <a href="furniture.html"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
+      <a href="simcard.html"><span class="th">ซิมการ์ด</span><span class="en">SIM card</span></a>
       <a href="costco.html" class="current"><span class="th">ช้อป Costco</span><span class="en">Costco shopping</span></a>
       <a href="attractions.html"><span class="th">ที่เที่ยว</span><span class="en">Attractions</span></a>
       <a href="contact.html"><span class="th">ติดต่อเรา</span><span class="en">Contact</span></a>
@@ -27,6 +206,9 @@
       <button type="button" data-lang="th" class="active">ไทย</button>
       <button type="button" data-lang="en">EN</button>
     </div>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
 </header>
 
@@ -38,16 +220,55 @@
       <span class="en">Vancouver · for visitors</span>
     </div>
     <h1 class="headline">
-      <span class="th">ไม่มีบัตรสมาชิก ก็<span class="accent">ช้อป Costco</span>ได้</span>
-      <span class="en">No membership? You can <span class="accent">still shop Costco</span></span>
+      <span class="th">ไม่มีบัตรสมาชิก ก็<span class="accent">เข้า Costco</span>ได้</span>
+      <span class="en">No membership? You can <span class="accent">still get in Costco</span></span>
     </h1>
     <p class="sub">
-      <span class="th">Costco เป็นร้านค้าส่งที่คนไทยชอบไปซื้อของฝากกลับบ้าน แต่ต้องมีบัตรสมาชิกถึงจะเข้าซื้อได้ — เราพาไปพร้อมดูแลเรื่องการซื้อให้ทั้งหมด</span>
-      <span class="en">Costco is a favourite for bringing gifts home, but you normally need a membership to shop there. We take care of that for you.</span>
+      <span class="th">Costco เป็นร้านค้าส่งที่คนไทยชอบไปซื้อของฝากกลับบ้าน แต่ต้องมีบัตรสมาชิกถึงจะเข้าซื้อได้ — เราพาเข้าไปด้วยกัน ไม่ต้องมีบัตรสมาชิกเอง</span>
+      <span class="en">Costco is a favourite for bringing gifts home, but you normally need a membership to get in — we simply take you in with us, no membership of your own required.</span>
     </p>
+    <div style="display:inline-block;margin-top:16px;font-size:0.85rem;color:var(--lantern-2);border:1px solid var(--lantern-2);padding:4px 12px;border-radius:999px;">
+      <span class="th">เริ่มต้นที่ 10 CAD ต่อคน — ราคาตามจำนวนคนในกลุ่ม</span>
+      <span class="en">Starting at $10 CAD per person — priced by group size</span>
+    </div>
+    <div style="margin-top:10px;">
+      <details class="price-details">
+        <summary class="btn btn-line" style="display:inline-block;">
+          <span class="th">ดูราคาเพิ่มเติม</span><span class="en">See more pricing</span>
+        </summary>
+        <div style="margin-top:16px;border:1px solid var(--rain);padding:18px 20px;background:var(--white);max-width:420px;">
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--rain);">
+            <span><span class="th">1-2 คน</span><span class="en">1-2 people</span></span>
+            <strong style="white-space:nowrap;">10 CAD<span class="th">/คน</span><span class="en">/person</span></strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--rain);">
+            <span><span class="th">3-5 คน</span><span class="en">3-5 people</span></span>
+            <strong style="white-space:nowrap;">15 CAD<span class="th">/คน</span><span class="en">/person</span></strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;">
+            <span><span class="th">6 คนขึ้นไป</span><span class="en">6+ people</span></span>
+            <strong style="white-space:nowrap;">20 CAD<span class="th">/คน</span><span class="en">/person</span></strong>
+          </div>
+        </div>
+      </details>
+    </div>
     <div class="hero-ctas">
       <a href="#request" class="btn btn-solid"><span class="th">จองทริปช้อป Costco</span><span class="en">Book a Costco trip</span></a>
       <a href="contact.html" class="btn btn-line"><span class="th">คุยกับเราก่อน</span><span class="en">Talk to us first</span></a>
+    </div>
+  </section>
+
+  <!-- WORDMARK BANNER -->
+  <section class="wrap" style="padding:10px 0 50px;">
+    <div style="border:2px solid var(--forest-2);padding:40px 30px;text-align:center;background:var(--white);">
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <svg viewBox="0 0 40 40" width="40" height="40"><rect x="6" y="14" width="28" height="20" rx="2" fill="none" stroke="var(--forest-2)" stroke-width="2.5"/><path d="M6 14l4-8h20l4 8" fill="none" stroke="var(--forest-2)" stroke-width="2.5" stroke-linejoin="round"/><circle cx="14" cy="34" r="2.5" fill="var(--forest-2)"/><circle cx="26" cy="34" r="2.5" fill="var(--forest-2)"/></svg>
+        <div style="font-family:'Taviraj',serif;font-weight:600;font-size:clamp(2rem,6vw,3.2rem);letter-spacing:0.02em;color:#C13B2E;">COSTCO</div>
+      </div>
+      <p style="margin:14px 0 0;font-size:0.85rem;color:var(--mist);">
+        <span class="th">Vancoolver เป็นบริการอิสระ ไม่ได้เป็นพาร์ทเนอร์ ตัวแทน หรือได้รับการรับรองจาก Costco Wholesale แต่อย่างใด</span>
+        <span class="en">Vancoolver is an independent service and is not affiliated with, sponsored by, or endorsed by Costco Wholesale.</span>
+      </p>
     </div>
   </section>
 
@@ -61,21 +282,25 @@
       <div class="two-col">
         <div>
           <p>
-            <span class="th">เราพาไปที่ Costco พร้อมดูแลเรื่องการซื้อให้ทั้งหมด แม้คุณจะไม่มีบัตรสมาชิกเอง เดินทางสะดวก ไม่ต้องเสียเวลาหาทางเอง</span>
-            <span class="en">We take you to Costco and handle the shopping process, even if you don't have a membership card — no need to figure out transport or logistics yourself.</span>
+            <span class="th">เราพาไปที่ Costco และพาเข้าไปด้วยกัน แม้คุณจะไม่มีบัตรสมาชิกเอง เดินทางสะดวก ไม่ต้องเสียเวลาหาทางเอง</span>
+            <span class="en">We take you to Costco and bring you in with us, even if you don't have a membership card — no need to figure out transport or logistics yourself.</span>
           </p>
           <div class="note-box">
-            <span class="th">ไม่มีบัตรสมาชิกก็ช้อปได้ ผ่าน Costco Shop Card ที่ใช้จ่ายแทนเงินสดได้โดยไม่ต้องเป็นสมาชิก (แนะนำให้ตรวจสอบเงื่อนไขล่าสุดกับสาขาที่จะไปอีกครั้ง)</span>
-            <span class="en">No membership? You can still pay using a Costco Shop Card, which works like cash without needing your own membership (we recommend confirming current terms with the branch beforehand).</span>
+            <span class="th">คุณเลือกซื้อของเองภายในร้านได้ตามปกติ เราแค่พาเข้าไปด้วยกันในฐานะแขก ไม่ได้ใช้บัตรของขวัญหรือกลไกพิเศษอื่นใด</span>
+            <span class="en">You shop for yourself inside as normal — we simply bring you in as a guest, with no shop cards or other special arrangements involved.</span>
+          </div>
+          <div class="note-box">
+            <span class="th">มีตัวเลือกเสริม: ให้เราขับรถขนของที่ซื้อกลับไปส่งที่พักให้ด้วย เผื่อซื้อของฝากเยอะจนถือกลับเองไม่ไหว</span>
+            <span class="en">Optional add-on: we can drive your purchases back and drop them off at your accommodation — handy if you end up with more souvenirs than you can carry.</span>
           </div>
         </div>
         <div>
           <h3 class="subhead-white"><span class="th">ของฝากยอดฮิตที่คนไทยมักซื้อ</span><span class="en">Popular souvenir picks</span></h3>
           <ul class="checklist">
-            <li><span class="mark">·</span><span><span class="th">วิตามินและอาหารเสริม</span><span class="en">Vitamins and supplements</span></span></li>
-            <li><span class="mark">·</span><span><span class="th">ช็อกโกแลตและขนมแบรนด์ Kirkland</span><span class="en">Kirkland chocolate and snacks</span></span></li>
-            <li><span class="mark">·</span><span><span class="th">เมเปิ้ลไซรัปแท้จากแคนาดา</span><span class="en">Real Canadian maple syrup</span></span></li>
-            <li><span class="mark">·</span><span><span class="th">กาแฟคั่วและครีมบำรุงผิว</span><span class="en">Roasted coffee and skincare</span></span></li>
+            <li><span class="mark"><svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="9" width="18" height="6" rx="3" fill="none" stroke="var(--lantern)" stroke-width="2"/><line x1="12" y1="9" x2="12" y2="15" stroke="var(--lantern)" stroke-width="2"/></svg></span><span><span class="th">วิตามินและอาหารเสริม</span><span class="en">Vitamins and supplements</span></span></li>
+            <li><span class="mark"><svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="6" width="18" height="12" rx="1" fill="none" stroke="var(--lantern)" stroke-width="2"/><line x1="9" y1="6" x2="9" y2="18" stroke="var(--lantern)" stroke-width="1.5"/><line x1="15" y1="6" x2="15" y2="18" stroke="var(--lantern)" stroke-width="1.5"/><line x1="3" y1="12" x2="21" y2="12" stroke="var(--lantern)" stroke-width="1.5"/></svg></span><span><span class="th">ช็อกโกแลตและขนมแบรนด์ Kirkland</span><span class="en">Kirkland chocolate and snacks</span></span></li>
+            <li><span class="mark"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M9 3h6v3l2 2v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8l2-2z" fill="none" stroke="var(--lantern)" stroke-width="2"/><path d="M12 11l1.8 3h-3.6z" fill="var(--lantern)"/></svg></span><span><span class="th">เมเปิ้ลไซรัปแท้จากแคนาดา</span><span class="en">Real Canadian maple syrup</span></span></li>
+            <li><span class="mark"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 9h13v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z" fill="none" stroke="var(--lantern)" stroke-width="2"/><path d="M17 10h2a2 2 0 0 1 0 4h-2" fill="none" stroke="var(--lantern)" stroke-width="2"/></svg></span><span><span class="th">กาแฟคั่วและครีมบำรุงผิว</span><span class="en">Roasted coffee and skincare</span></span></li>
           </ul>
         </div>
       </div>
@@ -133,6 +358,13 @@
           <input type="text" id="pickup">
         </div>
         <div class="field">
+          <label for="ridehome"><span class="th">ต้องการให้ขับรถขนของกลับที่พักด้วยไหม</span><span class="en">Want a ride back with your haul?</span></label>
+          <select id="ridehome">
+            <option value="No">No / ไม่ต้องการ</option>
+            <option value="Yes">Yes / ต้องการ</option>
+          </select>
+        </div>
+        <div class="field">
           <label for="notes"><span class="th">รายละเอียดเพิ่มเติม</span><span class="en">Anything else we should know</span></label>
           <textarea id="notes"></textarea>
         </div>
@@ -155,7 +387,42 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const langButtons = document.querySelectorAll('.lang-toggle button');
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.documentElement.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.setAttribute('lang', lang);
+      langButtons.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinksEl = document.querySelector('.nav-links');
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+  }
+});
+
+/* Builds a mailto: link from a form's fields and opens it.
+   fields = [[labelTh, labelEn, elementId], ...] */
+function sendAsEmail(formEl, confirmEl, subjectTh, subjectEn, fields) {
+  formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const isEn = document.documentElement.classList.contains('lang-en');
+    const val = id => (document.getElementById(id) && document.getElementById(id).value) || '-';
+    const subject = isEn ? subjectEn : subjectTh;
+    const bodyLines = fields.map(([labelTh, labelEn, id]) => `${isEn ? labelEn : labelTh}: ${val(id)}`);
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = `mailto:vancoolver.official@outlook.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    if (confirmEl) confirmEl.classList.add('show');
+  });
+}
+
+</script>
 <script>
   sendAsEmail(
     document.getElementById('tripForm'),
@@ -168,6 +435,7 @@
       ['วันที่สะดวก','Preferred date','date'],
       ['จำนวนคน','Number of people','people'],
       ['จุดนัดรับ','Pickup location','pickup'],
+      ['ต้องการขับรถขนของกลับที่พัก','Ride back with haul','ridehome'],
       ['รายละเอียดเพิ่มเติม','Notes','notes'],
     ]
   );

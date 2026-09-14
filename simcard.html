@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vancoolver — บริการประกอบเฟอร์นิเจอร์</title>
-<meta name="description" content="รับประกอบตู้ เตียง โต๊ะ ชั้นวางของ และงานช่างในบ้านใหม่ สำหรับคนไทยในแวนคูเวอร์">
+<title>Vancoolver — เลือกซิมการ์ดในแคนาดา</title>
+<meta name="description" content="แนะนำซิมการ์ดในแคนาดาสำหรับนักเรียนและผู้ย้ายมาใหม่ที่แวนคูเวอร์">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -181,39 +181,19 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
 @media (prefers-reduced-motion: reduce){ #flightpath{animation:none;stroke-dashoffset:0;} }
 @keyframes draw{ to{stroke-dashoffset:0;} }
 
-/* ---------- Furniture assembly animation ---------- */
-.assembly-art{display:flex;justify-content:center;padding:10px 0 20px;}
-.assembly-art svg{width:100%;max-width:420px;height:auto;}
-.piece{transform-box:fill-box;transform-origin:center;}
-.piece-headboard{animation:assembleHeadboard 6s ease-in-out infinite;}
-.piece-footboard{animation:assembleFootboard 6s ease-in-out infinite;}
-.piece-rail{animation:assembleRail 6s ease-in-out infinite;}
-.piece-mattress{animation:assembleMattress 6s ease-in-out infinite;}
-@keyframes assembleHeadboard{
-  0%{transform:translate(-70px,-50px) rotate(-30deg);}
-  35%,75%{transform:translate(0,0) rotate(0deg);}
-  100%{transform:translate(-70px,-50px) rotate(-30deg);}
-}
-@keyframes assembleFootboard{
-  0%{transform:translate(90px,-40px) rotate(25deg);}
-  35%,75%{transform:translate(0,0) rotate(0deg);}
-  100%{transform:translate(90px,-40px) rotate(25deg);}
-}
-@keyframes assembleRail{
-  0%{transform:translate(0,80px) rotate(-6deg);}
-  35%,75%{transform:translate(0,0) rotate(0deg);}
-  100%{transform:translate(0,80px) rotate(-6deg);}
-}
-@keyframes assembleMattress{
-  0%{transform:translate(10px,-70px) rotate(-12deg);opacity:0;}
-  45%,75%{transform:translate(0,0) rotate(0deg);opacity:1;}
-  100%{transform:translate(10px,-70px) rotate(-12deg);opacity:0;}
-}
-@media (prefers-reduced-motion: reduce){
-  .piece-headboard,.piece-footboard,.piece-rail,.piece-mattress{animation:none;}
-  .piece-mattress{opacity:1;}
-}
-
+</style>
+<style>
+  .provider-list{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rain);}
+  .provider{
+    display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+    padding:26px 0;border-bottom:1px solid var(--rain);
+  }
+  @media (max-width:600px){ .provider{grid-template-columns:1fr;} }
+  .provider h3{font-size:1.2rem;margin-bottom:8px;}
+  .provider p{margin:0;max-width:56ch;}
+  .provider .tag-line{font-size:0.85rem;color:var(--lantern-2);margin-top:8px;}
+  .provider-featured{grid-template-columns:auto 1fr auto;gap:24px;}
+  @media (max-width:700px){ .provider-featured{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -224,8 +204,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
     <nav class="nav-links">
       <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
       <a href="students.html"><span class="th">นักเรียน/ผู้ย้ายมาใหม่</span><span class="en">Students &amp; newcomers</span></a>
-      <a href="furniture.html" class="current"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
-      <a href="simcard.html"><span class="th">ซิมการ์ด</span><span class="en">SIM card</span></a>
+      <a href="furniture.html"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
+      <a href="simcard.html" class="current"><span class="th">ซิมการ์ด</span><span class="en">SIM card</span></a>
       <a href="costco.html"><span class="th">ช้อป Costco</span><span class="en">Costco shopping</span></a>
       <a href="attractions.html"><span class="th">ที่เที่ยว</span><span class="en">Attractions</span></a>
       <a href="contact.html"><span class="th">ติดต่อเรา</span><span class="en">Contact</span></a>
@@ -244,138 +224,67 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
   <!-- HERO -->
   <section class="hero wrap">
     <div class="kicker">
-      <span class="th">แวนคูเวอร์ · งานช่างในบ้านใหม่</span>
-      <span class="en">Vancouver · handywork for your new place</span>
+      <span class="th">แวนคูเวอร์ · เริ่มต้นใหม่</span>
+      <span class="en">Vancouver · getting set up</span>
     </div>
     <h1 class="headline">
-      <span class="th">กล่องเฟอร์นิเจอร์กองเต็มห้อง <span class="accent">ให้เราจัดการ</span></span>
-      <span class="en">Boxes of flat-pack furniture? <span class="accent">Let us handle it</span></span>
+      <span class="th">เลือกซิมให้ถูก <span class="accent">ตั้งแต่วันแรก</span></span>
+      <span class="en">Get the right SIM <span class="accent">from day one</span></span>
     </h1>
     <p class="sub">
-      <span class="th">ประกอบและแยกชิ้นส่วนตู้เสื้อผ้า เตียง โต๊ะ ชั้นวางของ และงานช่างในบ้าน — ไม่ต้องมานั่งอ่านคู่มือเองให้ปวดหัว (บริการนี้ไม่รวมการขนย้ายเฟอร์นิเจอร์)</span>
-      <span class="en">Assembly and disassembly of wardrobes, bed frames, desks, and shelving — no need to decode the instruction manual yourself. (This service does not include moving or transporting furniture.)</span>
+      <span class="th">มาถึงแคนาดาแล้วต้องใช้เน็ตทันที ทั้งเรียกรถ ดูแผนที่ คุยกับที่บ้าน หรือติดต่อธนาคาร — นี่คือค่ายซิมที่เราแนะนำสำหรับนักเรียนและผู้ย้ายมาใหม่</span>
+      <span class="en">You'll need data the moment you land — for rideshares, maps, calling home, or banking. Here are the carriers we recommend for students and newcomers.</span>
     </p>
-    <div style="display:inline-block;margin-top:16px;font-size:0.85rem;color:var(--lantern-2);border:1px solid var(--lantern-2);padding:4px 12px;border-radius:999px;">
-      <span class="th">เริ่มต้นที่ 10 CAD ต่อชิ้น — ราคาสุดท้ายขึ้นอยู่กับจำนวนและประเภทงาน</span>
-      <span class="en">Starting at $10 CAD per item — final price depends on quantity and job type</span>
-    </div>
-    <div class="hero-ctas">
-      <a href="#request" class="btn btn-solid"><span class="th">จองบริการประกอบเฟอร์นิเจอร์</span><span class="en">Book furniture assembly</span></a>
-      <a href="contact.html" class="btn btn-line"><span class="th">คุยกับเราก่อน</span><span class="en">Talk to us first</span></a>
-    </div>
   </section>
 
-  <!-- ASSEMBLY ANIMATION -->
-  <section class="wrap assembly-art">
-    <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-      <rect class="piece piece-headboard" x="50" y="50" width="18" height="140" rx="3" fill="var(--lantern)" stroke="var(--forest-2)" stroke-width="2"/>
-      <rect class="piece piece-footboard" x="228" y="90" width="18" height="100" rx="3" fill="var(--lantern)" stroke="var(--forest-2)" stroke-width="2"/>
-      <rect class="piece piece-rail" x="50" y="176" width="196" height="16" rx="3" fill="var(--lantern)" stroke="var(--forest-2)" stroke-width="2"/>
-      <rect class="piece piece-mattress" x="66" y="132" width="164" height="34" rx="8" fill="var(--white)" stroke="var(--forest-2)" stroke-width="2"/>
-    </svg>
-  </section>
+  <!-- PROVIDERS -->
+  <section class="wrap" style="padding:60px 0 40px;">
+    <div class="section-head">
+      <div class="kicker"><span class="th">ค่ายที่เราแนะนำ</span><span class="en">The carrier we recommend</span></div>
+      <h2><span class="th">ซิมสำหรับนักเรียน/ผู้ย้ายมาใหม่</span><span class="en">A SIM for students &amp; newcomers</span></h2>
+    </div>
 
-  <!-- WHAT WE DO -->
-  <section class="band-dark">
-    <div class="wrap">
-      <div class="section-head" style="margin-bottom:0;">
-        <div class="kicker"><span class="th">รับงานแบบไหนบ้าง</span><span class="en">What we handle</span></div>
-        <h2><span class="th">งานที่รับประกอบเป็นประจำ</span><span class="en">Jobs we assemble regularly</span></h2>
-      </div>
-      <div class="two-col">
-        <div>
-          <h3 class="subhead-white"><span class="th">เฟอร์นิเจอร์ในบ้าน</span><span class="en">Home furniture</span></h3>
-          <ul class="checklist">
-            <li><span class="mark">·</span><span><span class="th">ตู้เสื้อผ้าและตู้เก็บของแบบแฟลตแพ็ก</span><span class="en">Flat-pack wardrobes and storage units</span></span></li>
-            <li><span class="mark">·</span><span><span class="th">เตียงและฐานเตียง</span><span class="en">Bed frames and bases</span></span></li>
-            <li><span class="mark">·</span><span><span class="th">โต๊ะทำงานและโต๊ะกินข้าว</span><span class="en">Desks and dining tables</span></span></li>
-            <li><span class="mark">·</span><span><span class="th">ชั้นวางของและชั้นหนังสือ</span><span class="en">Shelving and bookcases</span></span></li>
-          </ul>
+    <div class="provider-list">
+      <div class="provider provider-featured" style="border:1px solid var(--forest-2);padding:26px 24px;background:var(--white);box-shadow:6px 6px 0 var(--lantern);">
+        <div style="flex-shrink:0;">
+          <svg viewBox="0 0 80 80" width="72" height="72">
+            <rect x="16" y="10" width="48" height="60" rx="6" fill="var(--paper)" stroke="var(--forest-2)" stroke-width="2.5"/>
+            <path d="M16 10h32l16 16v44a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6z" fill="none" stroke="var(--forest-2)" stroke-width="2.5" stroke-linejoin="round"/>
+            <rect x="26" y="26" width="18" height="14" rx="2" fill="var(--lantern)"/>
+            <line x1="26" y1="48" x2="54" y2="48" stroke="var(--forest-2)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="55" x2="46" y2="55" stroke="var(--forest-2)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </div>
         <div>
-          <h3 class="subhead-white"><span class="th">งานแยกชิ้นส่วน</span><span class="en">Disassembly</span></h3>
-          <ul class="checklist">
-            <li><span class="mark">·</span><span><span class="th">แยกชิ้นส่วนตู้เสื้อผ้าและตู้เก็บของ</span><span class="en">Disassembling wardrobes and storage units</span></span></li>
-            <li><span class="mark">·</span><span><span class="th">แยกชิ้นส่วนเตียงและฐานเตียง</span><span class="en">Disassembling bed frames and bases</span></span></li>
-            <li><span class="mark">·</span><span><span class="th">ติดตั้งชั้นแขวนผนังและราวแขวนผ้า</span><span class="en">Mounting wall shelves and curtain rails</span></span></li>
-            <li><span class="mark">·</span><span><span class="th">ประกอบโซฟาและเก้าอี้</span><span class="en">Assembling sofas and chairs</span></span></li>
-          </ul>
+          <div class="tag" style="display:inline-block;font-size:0.8rem;color:var(--lantern-2);border:1px solid var(--lantern-2);padding:3px 10px;border-radius:999px;margin-bottom:10px;">
+            <span class="th">ราคาถูกที่สุดที่เราแนะนำ</span><span class="en">Our cheapest pick</span>
+          </div>
+          <h3>GoPhoneBox</h3>
+          <p>
+            <span class="th">แพ็กเกจเริ่มต้นเพียง 35 CAD ต่อเดือน ได้เน็ต 75GB คุ้มที่สุดในบรรดาค่ายที่เราแนะนำ เหมาะมากสำหรับนักเรียนที่อยากได้เน็ตเยอะในราคาประหยัด</span>
+            <span class="en">Plans start at just $35 CAD/month for 75GB — the best value among the carriers we recommend, great for students who want a lot of data at a low price.</span>
+          </p>
+          <div class="tag-line"><span class="th">เหมาะกับ: อยากได้เน็ตเยอะ ราคาประหยัดที่สุด</span><span class="en">Good for: lots of data at the lowest price</span></div>
+          <div class="note-box" style="border-color:var(--lantern-2);color:var(--forest-2);background:#FBF3E4;margin-top:16px;">
+            <span class="th">🎁 สมัครผ่านลิงก์ของเราเพื่อรับเครดิต 30 ดอลลาร์</span>
+            <span class="en">🎁 Sign up through our link to get a $30 credit</span>
+          </div>
         </div>
+        <a href="https://gophonebox.com/plans/?referral=9925110000601" target="_blank" rel="noopener" class="btn btn-solid" style="align-self:center;"><span class="th">สมัครผ่านลิงก์ของเรา</span><span class="en">Sign up via our link</span></a>
       </div>
     </div>
   </section>
 
-  <!-- SCOPE NOTE -->
-  <section class="wrap" style="padding:0 0 10px;">
+  <!-- CROSS-LINK TO STUDENTS -->
+  <section class="wrap" style="padding:0 0 90px;">
     <div class="cross-link">
       <p>
-        <span class="th">หมายเหตุ: เรารับเฉพาะงานประกอบและแยกชิ้นส่วนเฟอร์นิเจอร์ ไม่รับบริการขนย้ายหรือขนส่ง</span>
-        <span class="en">Please note: we only handle assembly and disassembly — not moving or transporting furniture.</span>
+        <span class="th">ยังไม่ได้จัดการเรื่องรับส่งสนามบินหรือหาบ้าน? ดูบริการสำหรับนักเรียน/ผู้ย้ายมาใหม่ของเราด้วย</span>
+        <span class="en">Haven't sorted airport pickup or housing yet? Check out our student &amp; newcomer services too.</span>
       </p>
-    </div>
-  </section>
-
-  <!-- BOOKING FORM -->
-  <section id="request" class="request wrap">
-    <div class="section-head">
-      <div class="kicker"><span class="th">จองบริการ</span><span class="en">Book the service</span></div>
-      <h2><span class="th">บอกเราว่ามีงานอะไรบ้าง</span><span class="en">Tell us what you need assembled</span></h2>
-    </div>
-
-    <div class="ticket">
-      <div class="ticket-top">
-        <h2><span class="th">ใบจองงานช่าง</span><span class="en">Assembly booking</span></h2>
-        <span class="tag"><span class="th">ตอบกลับภายใน 1 วัน</span><span class="en">We reply within a day</span></span>
-      </div>
-      <form class="request-form" id="furnitureForm">
-        <div class="field-row">
-          <div class="field">
-            <label for="name"><span class="th">ชื่อ</span><span class="en">Name</span></label>
-            <input type="text" id="name" required>
-          </div>
-          <div class="field">
-            <label for="contact"><span class="th">LINE ID หรือเบอร์ติดต่อกลับ</span><span class="en">LINE ID or phone to reach you</span></label>
-            <input type="text" id="contact" required>
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="jobtype"><span class="th">ประเภทงาน</span><span class="en">Type of job</span></label>
-            <select id="jobtype">
-              <option value="Furniture assembly">Furniture assembly / ประกอบเฟอร์นิเจอร์ทั่วไป</option>
-              <option value="Bed assembly">Bed assembly / ประกอบเตียง</option>
-              <option value="Furniture disassembly">Furniture disassembly / แยกชิ้นส่วนเฟอร์นิเจอร์</option>
-              <option value="Shelf/wall mounting">Shelf or wall mounting / ติดตั้งชั้นวาง</option>
-              <option value="Other">Other / อื่น ๆ</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="itemcount"><span class="th">จำนวนชิ้น/รายการ</span><span class="en">Number of items</span></label>
-            <input type="text" id="itemcount" placeholder="e.g. 1 wardrobe + 1 bed">
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="address"><span class="th">ที่อยู่/ย่าน</span><span class="en">Address / area</span></label>
-            <input type="text" id="address">
-          </div>
-          <div class="field">
-            <label for="date"><span class="th">วันที่สะดวก</span><span class="en">Preferred date</span></label>
-            <input type="date" id="date">
-          </div>
-        </div>
-        <div class="field">
-          <label for="notes"><span class="th">รายละเอียดเพิ่มเติม (เช่น ลิงก์สินค้าจาก IKEA)</span><span class="en">Anything else we should know (e.g. an IKEA product link)</span></label>
-          <textarea id="notes"></textarea>
-        </div>
-        <button type="submit" class="btn btn-solid">
-          <span class="th">ส่งคำขอจอง</span><span class="en">Send booking request</span>
-        </button>
-        <div class="confirm-msg" id="confirmMsg">
-          <span class="th">เปิดอีเมลให้แล้ว กรุณากดส่งในแอปอีเมลของคุณเพื่อยืนยัน</span>
-          <span class="en">Your email app should be open — please hit send there to confirm.</span>
-        </div>
-      </form>
+      <a href="students.html" class="btn btn-line" style="white-space:nowrap;">
+        <span class="th">ดูบริการนักเรียน/ผู้ย้ายมาใหม่</span><span class="en">See student &amp; newcomer services</span>
+      </a>
     </div>
   </section>
 </main>
@@ -422,23 +331,6 @@ function sendAsEmail(formEl, confirmEl, subjectTh, subjectEn, fields) {
   });
 }
 
-</script>
-<script>
-  sendAsEmail(
-    document.getElementById('furnitureForm'),
-    document.getElementById('confirmMsg'),
-    'จองบริการประกอบเฟอร์นิเจอร์ จากเว็บไซต์ Vancoolver',
-    'Furniture assembly booking from Vancoolver website',
-    [
-      ['ชื่อ','Name','name'],
-      ['ช่องทางติดต่อกลับ','Contact (LINE/phone)','contact'],
-      ['ประเภทงาน','Type of job','jobtype'],
-      ['จำนวนชิ้น/รายการ','Number of items','itemcount'],
-      ['ที่อยู่/ย่าน','Address / area','address'],
-      ['วันที่สะดวก','Preferred date','date'],
-      ['รายละเอียดเพิ่มเติม','Notes','notes'],
-    ]
-  );
 </script>
 </body>
 </html>
