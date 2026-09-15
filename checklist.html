@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="th" class="lang-th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vancoolver — สิ่งที่ต้องทำเมื่อมาถึงแวนคูเวอร์</title>
+<meta name="description" content="เช็คลิสต์สำหรับผู้มาใหม่ในแวนคูเวอร์ — เปิดบัญชีธนาคาร ทำบัตร BC ID ทำ MSP และเอกสารที่ต้องเตรียม">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1EA; --paper-2:#E6E9DF; --ink:#1E2A26; --forest:#26453D; --forest-2:#1B322C;
+  --mist:#7F93A0; --lantern:#E2A63B; --lantern-2:#C98B23; --rain:#CBD0C4; --white:#FBFAF6;
+}
+*{box-sizing:border-box;} html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;} html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Sarabun',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Taviraj',serif;font-weight:500;line-height:1.25;margin:0;color:var(--forest-2);}
+a{color:inherit;} img,svg{display:block;max-width:100%;}
+.en{display:none;} html.lang-en .en{display:inline;} html.lang-en .th{display:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+header.site{position:sticky;top:0;z-index:40;background:rgba(238,241,234,0.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--rain);}
+.header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1080px;margin:0 auto;gap:20px;}
+.logo{font-family:'Taviraj',serif;font-size:1.35rem;font-weight:600;color:var(--forest-2);text-decoration:none;flex-shrink:0;}
+.logo em{font-style:italic;color:var(--lantern-2);}
+.nav-links{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.nav-links a{font-size:0.85rem;text-decoration:none;color:var(--forest-2);border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap;}
+.nav-links a.current{border-bottom-color:var(--lantern-2);color:var(--lantern-2);}
+.nav-links a:hover{border-bottom-color:var(--lantern);}
+.lang-toggle{display:flex;border:1px solid var(--forest-2);border-radius:999px;overflow:hidden;font-size:0.82rem;flex-shrink:0;}
+.lang-toggle button{background:none;border:none;padding:6px 14px;cursor:pointer;font-family:'Sarabun',sans-serif;color:var(--forest-2);}
+.lang-toggle button.active{background:var(--forest-2);color:var(--white);}
+.nav-toggle{display:none;background:none;border:1px solid var(--forest-2);border-radius:4px;padding:7px 9px;cursor:pointer;color:var(--forest-2);flex-shrink:0;}
+.nav-toggle svg{display:block;width:20px;height:20px;}
+@media (max-width:900px){
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--rain);flex-direction:column;align-items:flex-start;padding:16px 28px 22px;gap:16px;box-shadow:0 8px 16px rgba(0,0,0,0.06);}
+  .nav-links.open{display:flex;}
+}
+.hero{padding:70px 0 20px;}
+.kicker{color:var(--mist);font-size:0.98rem;margin-bottom:14px;}
+h1.headline{font-size:clamp(2.0rem, 4.2vw, 3.1rem);color:var(--forest-2);max-width:26ch;}
+h1.headline .accent{color:var(--lantern-2);font-style:italic;}
+.sub{margin-top:20px;font-size:1.05rem;max-width:60ch;}
+.section-head{max-width:60ch;margin-bottom:44px;}
+.section-head h2{font-size:clamp(1.5rem,2.8vw,2.1rem);}
+.btn{display:inline-block;padding:13px 26px;border-radius:3px;text-decoration:none;font-size:0.98rem;font-weight:500;border:1px solid var(--forest-2);}
+.btn-solid{background:var(--forest-2);color:var(--white);}
+.btn-solid:hover{background:var(--forest);}
+.btn-line{border-color:var(--forest-2);color:var(--forest-2);}
+.btn-line:hover{background:var(--forest-2);color:var(--white);}
+.checklist-item{border:1px solid var(--rain);background:var(--white);padding:26px 28px;margin-bottom:20px;}
+.checklist-item .step-num{font-family:'Taviraj',serif;font-style:italic;color:var(--mist);font-size:0.95rem;margin-bottom:8px;}
+.checklist-item h3{font-size:1.25rem;margin-bottom:10px;}
+.checklist-item p{margin:0 0 12px;max-width:64ch;}
+.doc-list{list-style:none;margin:0;padding:0;font-size:0.92rem;}
+.doc-list li{padding:4px 0;display:flex;gap:8px;}
+.doc-list .dot{color:var(--lantern-2);flex-shrink:0;}
+.service-note{margin-top:14px;border:1px solid var(--lantern-2);background:#FBF3E4;color:var(--forest-2);padding:12px 16px;font-size:0.9rem;}
+.cross-link{border:1px dashed var(--forest-2);padding:22px 26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin:0 0 10px;}
+.cross-link p{margin:0;max-width:56ch;}
+footer{padding:30px 0;border-top:1px solid var(--rain);font-size:0.85rem;color:var(--mist);}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Vanco<em>ol</em>ver</a>
+    <nav class="nav-links">
+      <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
+      <a href="students.html"><span class="th">นักเรียน/ผู้ย้ายมาใหม่</span><span class="en">Students &amp; newcomers</span></a>
+      <a href="checklist.html" class="current"><span class="th">เช็คลิสต์ผู้มาใหม่</span><span class="en">Newcomer checklist</span></a>
+      <a href="furniture.html"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
+      <a href="simcard.html"><span class="th">ซิมการ์ด</span><span class="en">SIM card</span></a>
+      <a href="costco.html"><span class="th">ช้อป Costco</span><span class="en">Costco shopping</span></a>
+      <a href="attractions.html"><span class="th">ที่เที่ยว</span><span class="en">Attractions</span></a>
+      <a href="thai-food.html"><span class="th">ร้านอาหารไทย</span><span class="en">Thai food</span></a>
+      <a href="contact.html"><span class="th">ติดต่อเรา</span><span class="en">Contact</span></a>
+    </nav>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="lang-toggle">
+      <button type="button" data-lang="th" class="active">ไทย</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="kicker">
+      <span class="th">แวนคูเวอร์ · เริ่มต้นใหม่</span>
+      <span class="en">Vancouver · getting started</span>
+    </div>
+    <h1 class="headline">
+      <span class="th">มาถึงใหม่แล้ว <span class="accent">ต้องทำอะไรบ้าง</span></span>
+      <span class="en">Just arrived — <span class="accent">here's what to do</span></span>
+    </h1>
+    <p class="sub">
+      <span class="th">รวมสิ่งที่ควรทำในช่วงแรกที่มาถึงแวนคูเวอร์ พร้อมเอกสารที่ต้องเตรียมสำหรับแต่ละอย่าง</span>
+      <span class="en">Everything worth doing in your first weeks in Vancouver, with the documents you'll need for each one.</span>
+    </p>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="wrap" style="padding:40px 0 30px;">
+    <div class="section-head">
+      <div class="kicker"><span class="th">เช็คลิสต์</span><span class="en">The checklist</span></div>
+      <h2><span class="th">สิ่งที่ควรทำก่อน-หลังมาถึง</span><span class="en">What to sort out early on</span></h2>
+    </div>
+
+    <div class="checklist-item">
+      <div class="step-num">01</div>
+      <h3><span class="th">เปิดบัญชีธนาคาร</span><span class="en">Open a bank account</span></h3>
+      <p>
+        <span class="th">มีบัญชีธนาคารแคนาดาไว้ใช้จ่าย รับเงิน และผูกกับบัตรต่าง ๆ ได้สะดวกขึ้น</span>
+        <span class="en">Having a Canadian bank account makes day-to-day spending, receiving money, and linking other cards much easier.</span>
+      </p>
+      <ul class="doc-list">
+        <li><span class="dot">·</span><span><span class="th">พาสปอร์ต</span><span class="en">Passport</span></span></li>
+        <li><span class="dot">·</span><span><span class="th">Study permit หรือ work permit</span><span class="en">Study permit or work permit</span></span></li>
+        <li><span class="dot">·</span><span><span class="th">หลักฐานที่อยู่ในแวนคูเวอร์ (เช่น สัญญาเช่า)</span><span class="en">Proof of your Vancouver address (e.g. a lease)</span></span></li>
+      </ul>
+      <div class="service-note">
+        <span class="th">พาไปเปิดบัญชีธนาคารฟรี เมื่อใช้บริการหาบ้านหรือรับส่งสนามบินกับเรา</span>
+        <span class="en">Free bank account accompaniment when you use our housing or airport pickup service.</span>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="step-num">02</div>
+      <h3><span class="th">ทำบัตร BC ID</span><span class="en">Get a BC ID card</span></h3>
+      <p>
+        <span class="th">บัตรประจำตัวที่ออกโดย ICBC สำหรับคนที่ไม่มีใบขับขี่ BC ใช้ยืนยันตัวตนได้ทั่วไปในชีวิตประจำวัน</span>
+        <span class="en">A photo ID card issued by ICBC for people without a BC driver's licence — handy for everyday identification.</span>
+      </p>
+      <ul class="doc-list">
+        <li><span class="dot">·</span><span><span class="th">พาสปอร์ต</span><span class="en">Passport</span></span></li>
+        <li><span class="dot">·</span><span><span class="th">Study permit หรือ work permit</span><span class="en">Study permit or work permit</span></span></li>
+        <li><span class="dot">·</span><span><span class="th">หลักฐานที่อยู่ในบีซี</span><span class="en">Proof of your BC address</span></span></li>
+      </ul>
+      <div class="service-note">
+        <span class="th">ใช้บริการกับเรา เราพาไปทำ BC ID ให้ด้วย</span>
+        <span class="en">Use our service and we'll take you to get your BC ID sorted too.</span>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="step-num">03</div>
+      <h3><span class="th">สมัคร MSP</span><span class="en">Apply for MSP</span></h3>
+      <p>
+        <span class="th">MSP (Medical Services Plan) คือประกันสุขภาพของรัฐบีซี ควรสมัครไว้ตั้งแต่เนิ่น ๆ เพราะมักมีระยะเวลารอสิทธิ์ก่อนเริ่มคุ้มครอง</span>
+        <span class="en">MSP (Medical Services Plan) is BC's public health insurance. Apply early, since there's usually a waiting period before coverage begins.</span>
+      </p>
+      <ul class="doc-list">
+        <li><span class="dot">·</span><span><span class="th">พาสปอร์ต</span><span class="en">Passport</span></span></li>
+        <li><span class="dot">·</span><span><span class="th">Study permit หรือ work permit</span><span class="en">Study permit or work permit</span></span></li>
+        <li><span class="dot">·</span><span><span class="th">หลักฐานที่อยู่ในบีซี</span><span class="en">Proof of your BC address</span></span></li>
+      </ul>
+      <div class="service-note">
+        <span class="th">ไม่แน่ใจว่าต้องสมัครยังไง หรือมีสิทธิ์เมื่อไหร่? ยินดีแนะนำฟรี</span>
+        <span class="en">Not sure how to apply or when you're covered? We're happy to walk you through it for free.</span>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="step-num">04</div>
+      <h3><span class="th">ขอเลขประกันสังคม (SIN)</span><span class="en">Get a Social Insurance Number (SIN)</span></h3>
+      <p>
+        <span class="th">จำเป็นถ้าวางแผนจะทำงานในแคนาดา ใช้สำหรับรับเงินเดือนและยื่นภาษี</span>
+        <span class="en">Needed if you plan to work in Canada — used for payroll and filing taxes.</span>
+      </p>
+      <ul class="doc-list">
+        <li><span class="dot">·</span><span><span class="th">พาสปอร์ต</span><span class="en">Passport</span></span></li>
+        <li><span class="dot">·</span><span><span class="th">Study permit หรือ work permit ที่ระบุสิทธิ์ทำงาน</span><span class="en">Study or work permit showing your work eligibility</span></span></li>
+      </ul>
+      <div class="service-note">
+        <span class="th">ไม่รู้จะเริ่มยังไง? ยินดีแนะนำฟรี</span>
+        <span class="en">Not sure where to start? We're happy to give you free guidance.</span>
+      </div>
+    </div>
+
+    <div class="checklist-item">
+      <div class="step-num">05</div>
+      <h3><span class="th">ซิมการ์ดและบัตรโดยสาร</span><span class="en">SIM card and transit card</span></h3>
+      <p>
+        <span class="th">มีเน็ตใช้และเดินทางด้วยขนส่งสาธารณะให้พร้อมตั้งแต่วันแรก ๆ</span>
+        <span class="en">Get connected and ready to use public transit from your first few days.</span>
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+        <a href="simcard.html" class="btn btn-line"><span class="th">ดูซิมการ์ดที่แนะนำ</span><span class="en">See our SIM pick</span></a>
+        <a href="students.html#journey" class="btn btn-line"><span class="th">ดูเรื่อง Compass Card</span><span class="en">See Compass Card info</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-LINK -->
+  <section class="wrap" style="padding:0 0 90px;">
+    <div class="cross-link">
+      <p>
+        <span class="th">ยังไม่ได้จัดการเรื่องรับส่งสนามบินหรือหาบ้าน? ดูบริการสำหรับนักเรียน/ผู้ย้ายมาใหม่ของเราด้วย</span>
+        <span class="en">Haven't sorted airport pickup or housing yet? Check out our student &amp; newcomer services too.</span>
+      </p>
+      <a href="students.html" class="btn btn-line" style="white-space:nowrap;">
+        <span class="th">ดูบริการนักเรียน/ผู้ย้ายมาใหม่</span><span class="en">See student &amp; newcomer services</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Vancoolver — Vancouver, BC, Canada</span>
+    <span><span class="th">ทำด้วยใจ สำหรับคนไทยไกลบ้าน</span><span class="en">Made with care, for Thais far from home</span></span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const langButtons = document.querySelectorAll('.lang-toggle button');
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.documentElement.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.setAttribute('lang', lang);
+      langButtons.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+  const navToggle = document.getElementById('navToggle');
+  const navLinksEl = document.querySelector('.nav-links');
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+  }
+});
+</script>
+</body>
+</html>

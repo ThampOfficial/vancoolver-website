@@ -22,7 +22,7 @@
   --white:#FBFAF6;
 }
 *{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;}
 html{scroll-behavior:smooth;}
 body{
   background:var(--paper);color:var(--ink);
@@ -37,7 +37,7 @@ img,svg{display:block;max-width:100%;}
 .en{display:none;}
 html.lang-en .en{display:inline;}
 html.lang-en .th{display:none;}
-.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
 
 /* ---------- Header ---------- */
 header.site{
@@ -47,7 +47,7 @@ header.site{
 .header-inner{
   position:relative;
   display:flex;align-items:center;justify-content:space-between;
-  padding:16px 28px;max-width:1080px;margin:0 auto;gap:20px;
+  padding:16px 32px;max-width:1080px;margin:0 auto;gap:20px;
 }
 .logo{font-family:'Taviraj',serif;font-size:1.35rem;font-weight:600;color:var(--forest-2);text-decoration:none;flex-shrink:0;}
 .logo em{font-style:italic;color:var(--lantern-2);}
@@ -191,10 +191,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
     <nav class="nav-links">
       <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
       <a href="students.html"><span class="th">นักเรียน/ผู้ย้ายมาใหม่</span><span class="en">Students &amp; newcomers</span></a>
+      <a href="checklist.html"><span class="th">เช็คลิสต์ผู้มาใหม่</span><span class="en">Newcomer checklist</span></a>
       <a href="furniture.html"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
       <a href="simcard.html"><span class="th">ซิมการ์ด</span><span class="en">SIM card</span></a>
       <a href="costco.html"><span class="th">ช้อป Costco</span><span class="en">Costco shopping</span></a>
       <a href="attractions.html"><span class="th">ที่เที่ยว</span><span class="en">Attractions</span></a>
+      <a href="thai-food.html"><span class="th">ร้านอาหารไทย</span><span class="en">Thai food</span></a>
       <a href="contact.html" class="current"><span class="th">ติดต่อเรา</span><span class="en">Contact</span></a>
     </nav>
     <div class="lang-toggle">
@@ -267,8 +269,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
             <input type="text" id="name" required>
           </div>
           <div class="field">
-            <label for="contact"><span class="th">LINE ID หรือเบอร์ติดต่อกลับ</span><span class="en">LINE ID or phone to reach you</span></label>
-            <input type="text" id="contact" required>
+            <label for="email"><span class="th">อีเมล</span><span class="en">Email</span></label>
+            <input type="email" id="email" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="phone"><span class="th">เบอร์โทรศัพท์</span><span class="en">Phone number</span></label>
+            <input type="tel" id="phone" required>
           </div>
         </div>
         <div class="field">
@@ -348,7 +356,8 @@ function sendAsEmail(formEl, confirmEl, subjectTh, subjectEn, fields) {
     'Message from the Vancoolver website',
     [
       ['ชื่อ','Name','name'],
-      ['ช่องทางติดต่อกลับ','Contact (LINE/phone)','contact'],
+      ['อีเมล','Email','email'],
+      ['เบอร์โทรศัพท์','Phone number','phone'],
       ['เรื่อง','Topic','topic'],
       ['ข้อความ','Message','message'],
     ]
