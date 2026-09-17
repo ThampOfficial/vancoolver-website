@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="th" class="lang-th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vancoolver — เรื่องควรรู้ในแคนาดา</title>
+<meta name="description" content="เรื่องควรรู้สำหรับคนไทยในแวนคูเวอร์ — Compass Card, ย่านที่ควรระวัง, ทางสู่การเป็น PR, ค่าที่พัก และอื่น ๆ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1EA; --paper-2:#E6E9DF; --ink:#1E2A26; --forest:#26453D; --forest-2:#1B322C;
+  --mist:#7F93A0; --lantern:#E2A63B; --lantern-2:#C98B23; --rain:#CBD0C4; --white:#FBFAF6;
+}
+*{box-sizing:border-box;} html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;} html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Sarabun',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Taviraj',serif;font-weight:500;line-height:1.25;margin:0;color:var(--forest-2);}
+a{color:inherit;} img,svg{display:block;max-width:100%;}
+.en{display:none;} html.lang-en .en{display:inline;} html.lang-en .th{display:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+header.site{position:sticky;top:0;z-index:40;background:rgba(238,241,234,0.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--rain);}
+.header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1080px;margin:0 auto;gap:20px;}
+.logo{font-family:'Taviraj',serif;font-size:1.35rem;font-weight:600;color:var(--forest-2);text-decoration:none;flex-shrink:0;}
+.logo em{font-style:italic;color:var(--lantern-2);}
+.nav-links{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.nav-links a{font-size:0.85rem;text-decoration:none;color:var(--forest-2);border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap;}
+.nav-links a.current{border-bottom-color:var(--lantern-2);color:var(--lantern-2);}
+.nav-links a:hover{border-bottom-color:var(--lantern);}
+.lang-toggle{display:flex;border:1px solid var(--forest-2);border-radius:999px;overflow:hidden;font-size:0.82rem;flex-shrink:0;}
+.lang-toggle button{background:none;border:none;padding:6px 14px;cursor:pointer;font-family:'Sarabun',sans-serif;color:var(--forest-2);}
+.lang-toggle button.active{background:var(--forest-2);color:var(--white);}
+.nav-toggle{display:none;background:none;border:1px solid var(--forest-2);border-radius:4px;padding:7px 9px;cursor:pointer;color:var(--forest-2);flex-shrink:0;}
+.nav-toggle svg{display:block;width:20px;height:20px;}
+@media (max-width:900px){
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--rain);flex-direction:column;align-items:flex-start;padding:16px 32px 22px;gap:16px;box-shadow:0 8px 16px rgba(0,0,0,0.06);}
+  .nav-links.open{display:flex;}
+}
+.hero{padding:70px 0 20px;}
+.kicker{color:var(--mist);font-size:0.98rem;margin-bottom:14px;}
+h1.headline{font-size:clamp(2.0rem, 4.2vw, 3.1rem);color:var(--forest-2);max-width:26ch;}
+h1.headline .accent{color:var(--lantern-2);font-style:italic;}
+.sub{margin-top:20px;font-size:1.05rem;max-width:60ch;}
+.section-head{max-width:60ch;margin-bottom:36px;}
+.section-head h2{font-size:clamp(1.5rem,2.8vw,2.1rem);}
+.btn{display:inline-block;padding:13px 26px;border-radius:3px;text-decoration:none;font-size:0.98rem;font-weight:500;border:1px solid var(--forest-2);}
+.btn-line{border-color:var(--forest-2);color:var(--forest-2);}
+.btn-line:hover{background:var(--forest-2);color:var(--white);}
+
+.topic-card{border:1px solid var(--rain);background:var(--white);padding:26px 28px;margin-bottom:20px;}
+.topic-card h3{font-size:1.25rem;margin-bottom:10px;}
+.topic-card p{margin:0 0 10px;max-width:66ch;}
+.topic-card p:last-child{margin-bottom:0;}
+.detail-block{margin-top:12px;border:1px solid var(--rain);background:var(--paper);padding:6px 18px;}
+.detail-block-row{display:flex;flex-wrap:wrap;gap:6px 16px;padding:10px 0;border-bottom:1px solid var(--rain);font-size:0.9rem;}
+.detail-block-row:last-child{border-bottom:none;}
+.detail-block-label{color:var(--mist);flex-shrink:0;min-width:120px;font-weight:500;}
+.caution-note{margin-top:12px;border:1px solid var(--mist);background:var(--paper-2);color:var(--ink);padding:12px 16px;font-size:0.88rem;}
+.disclaimer{margin-top:12px;font-size:0.82rem;color:var(--mist);}
+
+footer{padding:30px 0;border-top:1px solid var(--rain);font-size:0.85rem;color:var(--mist);}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Vanco<em>ol</em>ver</a>
+    <nav class="nav-links">
+      <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
+      <a href="students.html"><span class="th">นักเรียน/ผู้ย้ายมาใหม่</span><span class="en">Students &amp; newcomers</span></a>
+      <a href="checklist.html"><span class="th">เช็คลิสต์ผู้มาใหม่</span><span class="en">Newcomer checklist</span></a>
+      <a href="goodtoknow.html" class="current"><span class="th">เรื่องควรรู้</span><span class="en">Things to know</span></a>
+      <a href="furniture.html"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
+      <a href="simcard.html"><span class="th">ซิมการ์ด</span><span class="en">SIM card</span></a>
+      <a href="costco.html"><span class="th">ช้อป Costco</span><span class="en">Costco shopping</span></a>
+      <a href="attractions.html"><span class="th">ที่เที่ยว</span><span class="en">Attractions</span></a>
+      <a href="thai-food.html"><span class="th">ร้านอาหารไทย</span><span class="en">Thai food</span></a>
+      <a href="contact.html"><span class="th">ติดต่อเรา</span><span class="en">Contact</span></a>
+    </nav>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="lang-toggle">
+      <button type="button" data-lang="th" class="active">ไทย</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="kicker">
+      <span class="th">แวนคูเวอร์ · เรื่องควรรู้</span>
+      <span class="en">Vancouver · good to know</span>
+    </div>
+    <h1 class="headline">
+      <span class="th">เรื่องที่ <span class="accent">ควรรู้ไว้</span> ก่อนมาอยู่แคนาดา</span>
+      <span class="en">Things <span class="accent">worth knowing</span> before you settle in</span>
+    </h1>
+    <p class="sub">
+      <span class="th">รวมข้อมูลทั่วไปที่คนไทยที่มาอยู่แวนคูเวอร์มักอยากรู้ — ตั้งแต่การเดินทางไปจนถึงเรื่องวีซ่า</span>
+      <span class="en">General information Thai newcomers in Vancouver often want to know — from getting around to visa questions.</span>
+    </p>
+  </section>
+
+  <section class="wrap" style="padding:20px 32px 90px;">
+
+    <!-- COMPASS CARD -->
+    <div class="topic-card">
+      <h3><span class="th">🚋 บัตร Compass Card</span><span class="en">🚋 Compass Card</span></h3>
+      <p>
+        <span class="th">บัตรเดินทางแบบเติมเงินของ TransLink ใช้ได้กับรถบัส, SkyTrain, SeaBus และ West Coast Express ทั่วเมโทรแวนคูเวอร์ มีทั้งแบบเติมเงินจ่ายตามโซน และแบบรายเดือนเดินทางไม่จำกัด ซื้อได้ที่เครื่อง Compass Vending Machine ทุกสถานี SkyTrain, ร้าน London Drugs หรือออนไลน์ที่ compasscard.ca</span>
+        <span class="en">TransLink's reloadable transit card — works on buses, SkyTrain, SeaBus, and the West Coast Express. Available as pay-as-you-go or an unlimited monthly pass, from any Compass Vending Machine at SkyTrain stations, London Drugs, or online at compasscard.ca.</span>
+      </p>
+      <a href="checklist.html" class="btn btn-line" style="margin-top:6px;">
+        <span class="th">ดูรายละเอียดราคาและประเภทบัตรเต็ม ๆ →</span><span class="en">See full pricing and card types →</span>
+      </a>
+    </div>
+
+    <!-- SAFETY / AREAS -->
+    <div class="topic-card">
+      <h3><span class="th">📍 ย่านที่ควรระมัดระวัง</span><span class="en">📍 Areas to be mindful of</span></h3>
+      <p>
+        <span class="th">แวนคูเวอร์โดยรวมค่อนข้างปลอดภัย แต่ย่าน Downtown Eastside (DTES) เป็นที่รู้จักกันดีว่ามีปัญหาคนไร้บ้านและยาเสพติดค่อนข้างเห็นได้ชัด ควรระมัดระวังเป็นพิเศษหากเดินผ่านตอนกลางคืน</span>
+        <span class="en">Vancouver is generally quite safe, but the Downtown Eastside (DTES) is well known for visible homelessness and drug use. Extra caution is worth taking if you're walking through, especially at night.</span>
+      </p>
+      <p>
+        <span class="th">คำแนะนำทั่วไป: หลีกเลี่ยงการเดินคนเดียวในที่เปลี่ยวหรือแสงน้อยตอนดึก เก็บของมีค่าให้มิดชิดบนขนส่งสาธารณะ และสังเกตสภาพแวดล้อมรอบตัวเสมอ</span>
+        <span class="en">General tips: avoid walking alone in poorly lit or empty areas late at night, keep valuables out of sight on public transit, and stay aware of your surroundings.</span>
+      </p>
+    </div>
+
+    <!-- PR PATHWAYS -->
+    <div class="topic-card">
+      <h3><span class="th">🛂 ทางสู่การเป็น PR (Permanent Resident)</span><span class="en">🛂 Paths to becoming a PR (Permanent Resident)</span></h3>
+      <p>
+        <span class="th">มีหลายเส้นทางที่คนไทยในแคนาดามักใช้ ขึ้นอยู่กับสถานการณ์ของแต่ละคน:</span>
+        <span class="en">There are several routes people commonly use, depending on individual circumstances:</span>
+      </p>
+      <div class="detail-block">
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">เรียน → ทำงาน → PR</span><span class="en">Study → work → PR</span></span>
+          <span><span class="th">เรียนจบแล้วขอ Post-Graduation Work Permit (PGWP) ทำงานสะสมประสบการณ์ แล้วยื่นผ่าน Express Entry หรือ BC PNP</span><span class="en">Graduate, get a Post-Graduation Work Permit (PGWP), build Canadian work experience, then apply via Express Entry or the BC PNP</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">Express Entry</span><span class="en">Express Entry</span></span>
+          <span><span class="th">ระบบกลางของรัฐบาลกลาง คัดเลือกจากคะแนนทักษะ อายุ การศึกษา ประสบการณ์ทำงาน และภาษา</span><span class="en">The federal system that ranks candidates by skills, age, education, work experience, and language ability</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">BC PNP</span><span class="en">BC PNP</span></span>
+          <span><span class="th">โครงการเสนอชื่อผู้อพยพของรัฐบีซี เหมาะกับคนที่มีงานหรือทักษะที่บีซีต้องการ</span><span class="en">BC's provincial nominee program, suited to people with a job offer or skills the province needs</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">การสมรส/ครอบครัว</span><span class="en">Family sponsorship</span></span>
+          <span><span class="th">หากมีคู่สมรสหรือญาติสายตรงที่เป็นพลเมือง/PR แคนาดา สามารถยื่นสปอนเซอร์ได้</span><span class="en">If you have a spouse or close family member who's a Canadian citizen or PR, they may be able to sponsor you</span></span>
+        </div>
+      </div>
+      <p class="disclaimer">
+        <span class="th">ข้อมูลนี้เป็นภาพรวมทั่วไปเท่านั้น ไม่ใช่คำแนะนำทางกฎหมาย เงื่อนไขและสิทธิ์เปลี่ยนแปลงได้ตลอดเวลา แนะนำให้ปรึกษาที่ปรึกษาด้านการย้ายถิ่นฐานที่ได้รับใบอนุญาต (RCIC) หรือทนายความด้านคนเข้าเมืองสำหรับกรณีของคุณโดยเฉพาะ</span>
+        <span class="en">This is a general overview only, not legal advice. Requirements and eligibility change over time — for your specific situation, we recommend consulting a licensed immigration consultant (RCIC) or immigration lawyer.</span>
+      </p>
+    </div>
+
+    <!-- HOUSING COSTS -->
+    <div class="topic-card">
+      <h3><span class="th">🏠 ค่าที่พักโดยประมาณ</span><span class="en">🏠 Roughly what accommodation costs</span></h3>
+      <p>
+        <span class="th">แวนคูเวอร์เป็นหนึ่งในเมืองที่ค่าเช่าสูงที่สุดในแคนาดา ราคาผันผวนตามช่วงเวลาและย่าน ตัวเลขด้านล่างเป็นค่าประมาณคร่าว ๆ เท่านั้น</span>
+        <span class="en">Vancouver is one of the most expensive rental markets in Canada, and prices shift by season and neighbourhood. The figures below are rough estimates only.</span>
+      </p>
+      <div class="detail-block">
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">ห้อง Studio</span><span class="en">Studio</span></span>
+          <span>~$1,800–2,200 CAD/<span class="th">เดือน</span><span class="en">month</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">1 ห้องนอน</span><span class="en">1-bedroom</span></span>
+          <span>~$2,100–2,500 CAD/<span class="th">เดือน</span><span class="en">month</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">ห้องแชร์</span><span class="en">Shared room</span></span>
+          <span>~$700–1,200 CAD/<span class="th">เดือน</span><span class="en">month</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">Homestay</span><span class="en">Homestay</span></span>
+          <span>~$1,000–1,500 CAD/<span class="th">เดือน (มักรวมอาหาร)</span><span class="en">month (often includes meals)</span></span>
+        </div>
+      </div>
+      <a href="students.html#request" class="btn btn-line" style="margin-top:14px;">
+        <span class="th">ให้เราช่วยหาบ้านที่ตรงงบของคุณ →</span><span class="en">Let us help find a place within your budget →</span>
+      </a>
+    </div>
+
+    <!-- OTHER GOOD TO KNOW -->
+    <div class="topic-card">
+      <h3><span class="th">💡 อื่น ๆ ที่ควรรู้</span><span class="en">💡 Other things worth knowing</span></h3>
+      <div class="detail-block">
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">ภาษี</span><span class="en">Sales tax</span></span>
+          <span><span class="th">ราคาสินค้าส่วนใหญ่ยังไม่รวมภาษี (GST 5% + PST 7% ในบีซี) จะถูกบวกเพิ่มตอนจ่ายเงิน</span><span class="en">Most prices shown don't include tax (GST 5% + PST 7% in BC) — it's added at checkout</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">ทิป</span><span class="en">Tipping</span></span>
+          <span><span class="th">ร้านอาหารทั่วไปนิยมทิป 15-20% ของยอดก่อนภาษี</span><span class="en">Restaurants typically expect a 15-20% tip on the pre-tax total</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">อากาศ</span><span class="en">Weather</span></span>
+          <span><span class="th">ฝนตกบ่อยช่วงตุลาคม-มีนาคม ควรมีเสื้อกันฝนหรือร่มติดตัว</span><span class="en">It rains often from October to March — a rain jacket or umbrella goes a long way</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">อายุซื้อแอลกอฮอล์</span><span class="en">Drinking age</span></span>
+          <span><span class="th">19 ปีบริบูรณ์ในบีซี</span><span class="en">19 years old in BC</span></span>
+        </div>
+        <div class="detail-block-row">
+          <span class="detail-block-label"><span class="th">เบอร์ฉุกเฉิน</span><span class="en">Emergency number</span></span>
+          <span>911</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Vancoolver — Vancouver, BC, Canada</span>
+    <span><span class="th">ทำด้วยใจ สำหรับคนไทยไกลบ้าน</span><span class="en">Made with care, for Thais far from home</span></span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const langButtons = document.querySelectorAll('.lang-toggle button');
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.documentElement.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.setAttribute('lang', lang);
+      langButtons.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+  const navToggle = document.getElementById('navToggle');
+  const navLinksEl = document.querySelector('.nav-links');
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+  }
+});
+</script>
+</body>
+</html>
