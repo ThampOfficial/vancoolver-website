@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="th" class="lang-th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vancoolver — พาสัตว์เลี้ยงมาแคนาดาโดยเครื่องบิน</title>
+<meta name="description" content="คำแนะนำการพาสัตว์เลี้ยง (สุนัข/แมว) เดินทางจากไทยมาแคนาดาโดยเครื่องบิน เอกสารที่ต้องเตรียม และบริการรับทำเอกสาร-ไปรับที่สนามบิน">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1EA; --paper-2:#E6E9DF; --ink:#1E2A26; --forest:#26453D; --forest-2:#1B322C;
+  --mist:#7F93A0; --lantern:#E2A63B; --lantern-2:#C98B23; --rain:#CBD0C4; --white:#FBFAF6;
+}
+*{box-sizing:border-box;} html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;} html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Sarabun',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Taviraj',serif;font-weight:500;line-height:1.25;margin:0;color:var(--forest-2);}
+a{color:inherit;} img,svg{display:block;max-width:100%;}
+.en{display:none;} html.lang-en .en{display:inline;} html.lang-en .th{display:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+header.site{position:sticky;top:0;z-index:40;background:rgba(238,241,234,0.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--rain);}
+.header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1080px;margin:0 auto;gap:20px;}
+.logo{font-family:'Taviraj',serif;font-size:1.35rem;font-weight:600;color:var(--forest-2);text-decoration:none;flex-shrink:0;}
+.logo em{font-style:italic;color:var(--lantern-2);}
+.nav-links{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.nav-links a{font-size:0.85rem;text-decoration:none;color:var(--forest-2);border-bottom:1px solid transparent;padding-bottom:2px;white-space:nowrap;}
+.nav-links a.current{border-bottom-color:var(--lantern-2);color:var(--lantern-2);}
+.nav-links a:hover{border-bottom-color:var(--lantern);}
+.lang-toggle{display:flex;border:1px solid var(--forest-2);border-radius:999px;overflow:hidden;font-size:0.82rem;flex-shrink:0;}
+.lang-toggle button{background:none;border:none;padding:6px 14px;cursor:pointer;font-family:'Sarabun',sans-serif;color:var(--forest-2);}
+.lang-toggle button.active{background:var(--forest-2);color:var(--white);}
+.nav-toggle{display:none;background:none;border:1px solid var(--forest-2);border-radius:4px;padding:7px 9px;cursor:pointer;color:var(--forest-2);flex-shrink:0;}
+.nav-toggle svg{display:block;width:20px;height:20px;}
+@media (max-width:900px){
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--rain);flex-direction:column;align-items:flex-start;padding:16px 28px 22px;gap:16px;box-shadow:0 8px 16px rgba(0,0,0,0.06);}
+  .nav-links.open{display:flex;}
+}
+.hero{padding-top:70px;padding-bottom:20px;}
+.kicker{color:var(--mist);font-size:0.98rem;margin-bottom:14px;}
+h1.headline{font-size:clamp(2.0rem, 4.2vw, 3.1rem);color:var(--forest-2);max-width:26ch;}
+h1.headline .accent{color:var(--lantern-2);font-style:italic;}
+.sub{margin-top:20px;font-size:1.05rem;max-width:62ch;}
+.hero-ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+.section-head{max-width:62ch;margin-bottom:36px;}
+.section-head h2{font-size:clamp(1.5rem,2.8vw,2.1rem);}
+.btn{display:inline-block;padding:13px 26px;border-radius:3px;text-decoration:none;font-size:0.98rem;font-weight:500;border:1px solid var(--forest-2);}
+.btn-solid{background:var(--forest-2);color:var(--white);border:none;cursor:pointer;}
+.btn-solid:hover{background:var(--forest);}
+.btn-line{border-color:var(--forest-2);color:var(--forest-2);}
+.btn-line:hover{background:var(--forest-2);color:var(--white);}
+
+/* Two-sided journey (Thailand export / Canada import) */
+.journey-two{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:10px;}
+@media (max-width:800px){ .journey-two{grid-template-columns:1fr;} }
+.journey-card{border:1px solid var(--rain);background:var(--white);padding:26px 26px 22px;}
+.journey-card .flag{font-size:0.85rem;color:var(--lantern-2);margin-bottom:8px;letter-spacing:0.02em;}
+.journey-card h3{font-size:1.25rem;margin-bottom:12px;}
+.journey-card p{margin:0 0 14px;}
+.doc-list{list-style:none;margin:0;padding:0;font-size:0.92rem;}
+.doc-list li{padding:5px 0;display:flex;gap:8px;align-items:baseline;}
+.doc-list .dot{color:var(--lantern-2);flex-shrink:0;}
+
+/* Timeline arrow between the two cards */
+.journey-arrow{display:none;align-items:center;justify-content:center;}
+@media (min-width:801px){ .journey-arrow{display:flex;} }
+
+/* Airline band */
+.band-dark{padding-top:70px;padding-bottom:70px;background:var(--forest-2);color:var(--white);}
+.band-dark h2{color:var(--white);}
+.band-dark .kicker{color:#B9CFC5;}
+.band-dark p{color:#DCE6DE;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:44px;align-items:start;}
+@media (max-width:800px){ .two-col{grid-template-columns:1fr;} }
+.checklist{list-style:none;margin:0;padding:0;}
+.checklist li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);display:flex;gap:12px;align-items:baseline;}
+.checklist li:last-child{border-bottom:none;}
+.checklist .mark{color:var(--lantern);flex-shrink:0;}
+.subhead-white{color:var(--white);font-size:1.15rem;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:12px;}
+
+/* Fun facts */
+.fact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;}
+@media (max-width:760px){ .fact-grid{grid-template-columns:1fr;} }
+.fact-card{border:1px solid var(--rain);background:var(--white);padding:20px 20px;}
+.fact-card .fact-icon{margin-bottom:10px;}
+.fact-card .fact-num{font-family:'Taviraj',serif;font-size:1.4rem;color:var(--lantern-2);margin-bottom:6px;}
+.fact-card p{margin:0;font-size:0.92rem;}
+
+.disclaimer-box{margin-top:30px;border:1px solid var(--mist);background:var(--paper-2);color:var(--ink);padding:16px 20px;font-size:0.88rem;}
+
+/* Ticket form (shared pattern) */
+.request{padding-top:78px;padding-bottom:78px;}
+.ticket{background:var(--white);border:1px solid var(--forest-2);position:relative;box-shadow:6px 6px 0 var(--lantern);}
+.ticket-top{padding:30px 34px 22px;border-bottom:1px dashed var(--forest-2);display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.ticket-top h2{font-size:1.5rem;}
+.ticket-top .tag{font-size:0.85rem;color:var(--mist);border:1px solid var(--mist);padding:4px 10px;border-radius:999px;white-space:nowrap;}
+form.request-form{padding:30px 34px 34px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media (max-width:600px){ .field-row{grid-template-columns:1fr;} }
+.field{margin-bottom:20px;}
+.field label{display:block;font-size:0.9rem;color:var(--mist);margin-bottom:6px;}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 12px;border:1px solid var(--rain);border-radius:2px;
+  background:var(--paper);font-family:'Sarabun',sans-serif;font-size:0.98rem;color:var(--ink);
+}
+.field textarea{resize:vertical;min-height:90px;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--lantern);outline-offset:1px;border-color:var(--forest-2);}
+.confirm-msg{margin-top:16px;padding:12px 16px;background:#EAF3EC;border:1px solid var(--forest);color:var(--forest-2);font-size:0.92rem;display:none;}
+.confirm-msg.show{display:block;}
+
+footer{padding-top:30px;padding-bottom:30px;border-top:1px solid var(--rain);font-size:0.85rem;color:var(--mist);}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Vanco<em>ol</em>ver</a>
+    <nav class="nav-links">
+      <a href="index.html"><span class="th">หน้าแรก</span><span class="en">Home</span></a>
+      <a href="students.html"><span class="th">นักเรียน/ผู้ย้ายมาใหม่</span><span class="en">Students &amp; newcomers</span></a>
+      <a href="checklist.html"><span class="th">เช็คลิสต์ผู้มาใหม่</span><span class="en">Newcomer checklist</span></a>
+      <a href="goodtoknow.html"><span class="th">เรื่องควรรู้</span><span class="en">Things to know</span></a>
+      <a href="pettravel.html" class="current"><span class="th">พาสัตว์เลี้ยงมา</span><span class="en">Pet travel</span></a>
+      <a href="furniture.html"><span class="th">ประกอบเฟอร์นิเจอร์</span><span class="en">Furniture assembly</span></a>
+      <a href="simcard.html"><span class="th">ซิมการ์ด</span><span class="en">SIM card</span></a>
+      <a href="costco.html"><span class="th">ช้อป Costco</span><span class="en">Costco shopping</span></a>
+      <a href="attractions.html"><span class="th">ที่เที่ยว</span><span class="en">Attractions</span></a>
+      <a href="thai-food.html"><span class="th">ร้านอาหารไทย</span><span class="en">Thai food</span></a>
+      <a href="contact.html"><span class="th">ติดต่อเรา</span><span class="en">Contact</span></a>
+    </nav>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="lang-toggle">
+      <button type="button" data-lang="th" class="active">ไทย</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="kicker">
+      <span class="th">แวนคูเวอร์ · พาน้องมาด้วยกัน</span>
+      <span class="en">Vancouver · bringing your pet along</span>
+    </div>
+    <h1 class="headline">
+      <span class="th">ย้ายมาทั้งที <span class="accent">พาน้องมาด้วย</span></span>
+      <span class="en">Moving here? <span class="accent">Bring them with you</span></span>
+    </h1>
+    <p class="sub">
+      <span class="th">พาสุนัขหรือแมวมาแคนาดาโดยเครื่องบินต้องเตรียมเอกสารทั้งฝั่งไทยและฝั่งแคนาดา — เราสรุปขั้นตอนคร่าว ๆ ให้ และมีบริการช่วยเตรียมเอกสาร พร้อมไปรับที่สนามบินด้วย</span>
+      <span class="en">Flying a dog or cat to Canada means paperwork on both the Thailand and Canada sides — here's a general overview, plus our service to help prepare documents and meet your pet at the airport.</span>
+    </p>
+    <div class="hero-ctas">
+      <a href="#request" class="btn btn-solid"><span class="th">สอบถามบริการพาสัตว์เลี้ยงมา</span><span class="en">Ask about our pet travel service</span></a>
+      <a href="contact.html" class="btn btn-line"><span class="th">คุยกับเราก่อน</span><span class="en">Talk to us first</span></a>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER UP FRONT -->
+  <section class="wrap" style="padding-top:10px;padding-bottom:0;">
+    <div class="disclaimer-box">
+      <span class="th">⚠️ ข้อมูลในหน้านี้เป็นภาพรวมทั่วไปเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือสัตวแพทย์ กฎเกณฑ์เปลี่ยนแปลงได้ตลอดเวลา กรุณาตรวจสอบข้อมูลล่าสุดกับกรมปศุสัตว์ไทย (DLD), หน่วยงาน CFIA ของแคนาดา และสายการบินที่จะใช้บริการอีกครั้งก่อนเดินทางจริงเสมอ</span>
+      <span class="en">⚠️ This page is a general overview only, not legal or veterinary advice. Rules change often — always confirm current requirements with Thailand's Department of Livestock Development (DLD), Canada's CFIA, and your airline before you travel.</span>
+    </div>
+  </section>
+
+  <!-- TWO-SIDED JOURNEY -->
+  <section class="wrap" style="padding-top:50px;padding-bottom:20px;">
+    <div class="section-head">
+      <div class="kicker"><span class="th">ภาพรวมเส้นทาง</span><span class="en">The journey, in two sides</span></div>
+      <h2><span class="th">ฝั่งไทย (ส่งออก) + ฝั่งแคนาดา (นำเข้า)</span><span class="en">Thailand (export) + Canada (import)</span></h2>
+    </div>
+
+    <div class="journey-two">
+      <div class="journey-card">
+        <div class="flag"><span class="th">🇹🇭 ฝั่งไทย — ก่อนออกเดินทาง</span><span class="en">🇹🇭 Thailand side — before you fly</span></div>
+        <h3><span class="th">ใบอนุญาตส่งออกจากกรมปศุสัตว์ (DLD)</span><span class="en">DLD export permit</span></h3>
+        <p>
+          <span class="th">สัตว์เลี้ยงต้องผ่านการตรวจและขอใบอนุญาตส่งออกที่ด่านกักกันสัตว์ (Animal Quarantine Station) ที่สนามบินที่จะเดินทางออก มักทำได้ล่วงหน้าไม่กี่วันก่อนบิน</span>
+          <span class="en">Your pet needs a vet inspection and export permit from the Animal Quarantine Station (AQS) at your departure airport — usually done just a few days before the flight.</span>
+        </p>
+        <ul class="doc-list">
+          <li><span class="dot">·</span><span><span class="th">แบบฟอร์มขอส่งออก (R1/1) และสำเนาพาสปอร์ตเจ้าของ</span><span class="en">Export application form (R1/1) and owner's passport copy</span></span></li>
+          <li><span class="dot">·</span><span><span class="th">ใบรับรองไมโครชิพและสมุดวัคซีน (ต้องฉีดพิษสุนัขบ้ามาแล้ว)</span><span class="en">Microchip certificate and vaccination book (rabies vaccine required)</span></span></li>
+          <li><span class="dot">·</span><span><span class="th">ใบรับรองสุขภาพสัตว์ (Health Certificate) ออกโดยด่านกักกันสัตว์</span><span class="en">An official health certificate issued by the quarantine station</span></span></li>
+          <li><span class="dot">·</span><span><span class="th">แผนการเดินทาง/เที่ยวบิน</span><span class="en">Flight itinerary</span></span></li>
+        </ul>
+      </div>
+
+      <div class="journey-card">
+        <div class="flag"><span class="th">🇨🇦 ฝั่งแคนาดา — เมื่อเดินทางถึง</span><span class="en">🇨🇦 Canada side — on arrival</span></div>
+        <h3><span class="th">ข้อกำหนดของ CFIA</span><span class="en">CFIA requirements</span></h3>
+        <p>
+          <span class="th">โดยทั่วไป สุนัขและแมวส่วนตัว (ไม่ใช่นำเข้าเชิงพาณิชย์) ไม่ต้องกักตัวที่แคนาดา หลักฐานหลักที่ต้องมีคือใบรับรองการฉีดวัคซีนพิษสุนัขบ้า</span>
+          <span class="en">For most personal (non-commercial) dogs and cats, there's no quarantine in Canada. The main thing you need is a valid rabies vaccination certificate.</span>
+        </p>
+        <ul class="doc-list">
+          <li><span class="dot">·</span><span><span class="th">ใบรับรองวัคซีนพิษสุนัขบ้า (ภาษาอังกฤษหรือฝรั่งเศส) จากสัตวแพทย์</span><span class="en">Rabies vaccination certificate (in English or French), from a licensed vet</span></span></li>
+          <li><span class="dot">·</span><span><span class="th">ไมโครชิพ (ไม่บังคับตามกฎกลาง แต่แนะนำให้มี)</span><span class="en">Microchip (not federally mandatory, but recommended)</span></span></li>
+          <li><span class="dot">·</span><span><span class="th">สำหรับสุนัข: อาจต้องมีเอกสารเพิ่มเติมหากมาจากประเทศกลุ่มเสี่ยงโรคพิษสุนัขบ้าสูง — ควรตรวจสอบผ่านระบบ My CFIA ก่อนเดินทาง</span><span class="en">For dogs: extra documents may apply if coming from a country on CFIA's higher-risk rabies list — check via the My CFIA tool before you travel</span></span></li>
+          <li><span class="dot">·</span><span><span class="th">ค่าธรรมเนียมตรวจที่ด่าน เริ่มต้นประมาณ 30 CAD</span><span class="en">Border inspection fee, starting around $30 CAD</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- AIRLINE SECTION -->
+  <section class="band-dark">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:0;">
+        <div class="kicker"><span class="th">เรื่องเครื่องบิน</span><span class="en">About the flight</span></div>
+        <h2><span class="th">สัตว์เลี้ยงเดินทางแบบไหนได้บ้าง</span><span class="en">How pets can travel on the plane</span></h2>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3 class="subhead-white"><span class="th">สายการบินส่วนใหญ่ที่บินไทย-แคนาดา</span><span class="en">Most airlines flying Thailand–Canada</span></h3>
+          <ul class="checklist">
+            <li><span class="mark">·</span><span><span class="th">สายการบินเอเชียหลายเจ้า (เช่น EVA Air, Thai Airways) มักไม่รับสัตว์เลี้ยงทั่วไปขึ้นเคบิน รับเฉพาะสุนัขนำทาง/ช่วยเหลือ</span><span class="en">Many Asian carriers (e.g. EVA Air, Thai Airways) generally don't allow regular pets in the cabin — only trained service dogs</span></span></li>
+            <li><span class="mark">·</span><span><span class="th">สัตว์เลี้ยงทั่วไปมักเดินทางใต้ท้องเครื่องแบบสัมภาระ (checked baggage) ในกรงที่ได้มาตรฐาน IATA</span><span class="en">Regular pets usually travel as checked baggage in the cargo hold, inside an IATA-compliant crate</span></span></li>
+            <li><span class="mark">·</span><span><span class="th">บางเส้นทาง/สายการบินมีข้อจำกัดเรื่องสายพันธุ์หน้าสั้น (เช่น ปั๊ก บูลด็อก) และช่วงเวลาที่อากาศร้อนจัด</span><span class="en">Some routes restrict brachycephalic (flat-faced) breeds like pugs and bulldogs, and during extreme heat periods</span></span></li>
+            <li><span class="mark">·</span><span><span class="th">ต้องแจ้งสายการบินล่วงหน้า มักอย่างน้อย 48 ชั่วโมง เพราะจำนวนกรงต่อเที่ยวบินมีจำกัด</span><span class="en">Airlines need advance notice, usually at least 48 hours, since there's a limited number of crates per flight</span></span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="subhead-white"><span class="th">เรื่องกรง (Crate)</span><span class="en">About the crate</span></h3>
+          <ul class="checklist">
+            <li><span class="mark">·</span><span><span class="th">ต้องเป็นกรงแบบแข็ง (hard-sided) ได้มาตรฐาน IATA ระบายอากาศได้ดี</span><span class="en">Must be a hard-sided, well-ventilated IATA-approved crate</span></span></li>
+            <li><span class="mark">·</span><span><span class="th">ขนาดต้องให้สัตว์ยืน หมุนตัว และนอนเหยียดได้สบาย</span><span class="en">Sized so the pet can stand, turn around, and lie down comfortably</span></span></li>
+            <li><span class="mark">·</span><span><span class="th">ควรมีที่ใส่น้ำติดกรง และป้าย Live Animal ชัดเจน</span><span class="en">Should include a water dispenser and a clear "Live Animal" label</span></span></li>
+            <li><span class="mark">·</span><span><span class="th">ค่าธรรมเนียมขึ้นอยู่กับน้ำหนักสัตว์+กรง และระยะทาง แตกต่างกันไปตามสายการบิน</span><span class="en">Fees depend on combined pet+crate weight and distance, and vary by airline</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERESTING FACTS -->
+  <section class="wrap" style="padding-top:60px;padding-bottom:20px;">
+    <div class="section-head">
+      <div class="kicker"><span class="th">รู้ไว้ใช่ว่า</span><span class="en">Good to know</span></div>
+      <h2><span class="th">ข้อมูลที่น่าสนใจ</span><span class="en">Interesting facts</span></h2>
+    </div>
+    <div class="fact-grid">
+      <div class="fact-card">
+        <div class="fact-icon"><svg viewBox="0 0 28 28" width="30" height="30"><path d="M14 2C8 2 4 7 4 12c0 7 10 14 10 14s10-7 10-14c0-5-4-10-10-10z" fill="none" stroke="var(--forest-2)" stroke-width="2"/><circle cx="14" cy="12" r="3.5" fill="var(--lantern)"/></svg></div>
+        <div class="fact-num"><span class="th">ไม่มีกักตัว</span><span class="en">No quarantine</span></div>
+        <p><span class="th">สุนัข-แมวส่วนตัวที่เอกสารครบ ไม่ต้องกักตัวเมื่อเข้าแคนาดา ต่างจากหลายประเทศที่กำหนดให้กักตัวนานหลายเดือน</span><span class="en">A dog or cat with complete paperwork needs no quarantine entering Canada — unlike many countries that require months of isolation.</span></p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon"><svg viewBox="0 0 28 28" width="30" height="30"><rect x="4" y="8" width="20" height="14" rx="2" fill="none" stroke="var(--forest-2)" stroke-width="2"/><circle cx="9" cy="15" r="1.6" fill="var(--lantern)"/><circle cx="19" cy="15" r="1.6" fill="var(--lantern)"/></svg></div>
+        <div class="fact-num"><span class="th">60 วัน</span><span class="en">60 days</span></div>
+        <p><span class="th">ใบอนุญาตส่งออกของไทยส่วนใหญ่มีอายุใช้งานประมาณ 60 วันนับจากวันที่ออก จึงควรวางแผนวันบินให้อยู่ในช่วงนี้</span><span class="en">Thailand's export permit is typically valid for about 60 days from issue, so plan your flight date within that window.</span></p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon"><svg viewBox="0 0 28 28" width="30" height="30"><circle cx="14" cy="14" r="10" fill="none" stroke="var(--forest-2)" stroke-width="2"/><path d="M14 8v6l4 3" stroke="var(--lantern)" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="fact-num"><span class="th">21 วันก่อนบิน</span><span class="en">21 days before</span></div>
+        <p><span class="th">วัคซีนพิษสุนัขบ้าต้องฉีดอย่างน้อย 21 วันก่อนเดินทาง ถึงจะถือว่าสร้างภูมิคุ้มกันได้ครบตามเกณฑ์ส่วนใหญ่</span><span class="en">The rabies vaccine typically needs to be given at least 21 days before travel to count as fully effective under most rules.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR SERVICE -->
+  <section class="wrap" style="padding-top:40px;padding-bottom:20px;">
+    <div class="cross-link" style="border-style:solid;background:var(--white);flex-direction:column;align-items:flex-start;">
+      <h3 style="margin-bottom:10px;"><span class="th">🐾 บริการของเรา</span><span class="en">🐾 Our service</span></h3>
+      <p style="margin-bottom:14px;max-width:66ch;">
+        <span class="th">เราช่วยตรวจสอบรายการเอกสารที่ต้องเตรียมทั้งสองฝั่ง ประสานงานเรื่องนัดหมายด่านกักกันสัตว์ฝั่งไทย และไปรับน้องที่สนามบิน YVR เมื่อถึงแวนคูเวอร์ พร้อมพาผ่านขั้นตอนตรวจของ CBSA/CFIA</span>
+        <span class="en">We help you check off the document list on both sides, coordinate the Thai quarantine station appointment, and meet your pet at YVR airport in Vancouver — walking you through the CBSA/CFIA check on arrival.</span>
+      </p>
+      <a href="#request" class="btn btn-solid"><span class="th">สอบถามบริการนี้</span><span class="en">Ask about this service</span></a>
+    </div>
+  </section>
+
+  <!-- CROSS-LINK TO CHECKLIST -->
+  <section class="wrap" style="padding-top:0;padding-bottom:70px;">
+    <div class="cross-link">
+      <p>
+        <span class="th">กำลังเตรียมย้ายมาใหม่อยู่แล้ว? ดูเช็คลิสต์สิ่งที่ต้องทำตอนมาถึงแวนคูเวอร์ด้วย</span>
+        <span class="en">Already getting ready to move? Check out our newcomer checklist too.</span>
+      </p>
+      <a href="checklist.html" class="btn btn-line" style="white-space:nowrap;">
+        <span class="th">ดูเช็คลิสต์ผู้มาใหม่</span><span class="en">See the newcomer checklist</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section id="request" class="request wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="th">สอบถามบริการ</span><span class="en">Ask about the service</span></div>
+      <h2><span class="th">บอกเราเรื่องน้องของคุณ</span><span class="en">Tell us about your pet</span></h2>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-top">
+        <h2><span class="th">แบบฟอร์มสอบถาม</span><span class="en">Pet travel inquiry</span></h2>
+        <span class="tag"><span class="th">ตอบกลับภายใน 1 วัน</span><span class="en">We reply within a day</span></span>
+      </div>
+      <form class="request-form" id="petForm">
+        <div class="field-row">
+          <div class="field">
+            <label for="name"><span class="th">ชื่อ</span><span class="en">Name</span></label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="field">
+            <label for="email"><span class="th">อีเมล</span><span class="en">Email</span></label>
+            <input type="email" id="email" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="phone"><span class="th">เบอร์โทรศัพท์</span><span class="en">Phone number</span></label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div class="field">
+            <label for="pettype"><span class="th">ชนิดสัตว์เลี้ยง</span><span class="en">Type of pet</span></label>
+            <select id="pettype">
+              <option value="Dog">Dog / สุนัข</option>
+              <option value="Cat">Cat / แมว</option>
+              <option value="Other">Other / อื่น ๆ</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="breed"><span class="th">สายพันธุ์ / น้ำหนักโดยประมาณ</span><span class="en">Breed / approximate weight</span></label>
+            <input type="text" id="breed">
+          </div>
+          <div class="field">
+            <label for="traveldate"><span class="th">วันที่วางแผนเดินทาง</span><span class="en">Planned travel date</span></label>
+            <input type="date" id="traveldate">
+          </div>
+        </div>
+        <div class="field">
+          <label for="notes"><span class="th">รายละเอียดเพิ่มเติม (เช่น ฉีดวัคซีนพิษสุนัขบ้าแล้วหรือยัง)</span><span class="en">Anything else we should know (e.g. rabies vaccine status)</span></label>
+          <textarea id="notes"></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid">
+          <span class="th">ส่งคำถาม</span><span class="en">Send inquiry</span>
+        </button>
+        <div class="confirm-msg" id="confirmMsg">
+          <span class="th">เปิดอีเมลให้แล้ว กรุณากดส่งในแอปอีเมลของคุณเพื่อยืนยัน</span>
+          <span class="en">Your email app should be open — please hit send there to confirm.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Vancoolver — Vancouver, BC, Canada</span>
+    <span><span class="th">ทำด้วยใจ สำหรับคนไทยไกลบ้าน</span><span class="en">Made with care, for Thais far from home</span></span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const langButtons = document.querySelectorAll('.lang-toggle button');
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.documentElement.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.setAttribute('lang', lang);
+      langButtons.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinksEl = document.querySelector('.nav-links');
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+  }
+});
+
+function sendAsEmail(formEl, confirmEl, subjectTh, subjectEn, fields) {
+  formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const isEn = document.documentElement.classList.contains('lang-en');
+    const val = id => (document.getElementById(id) && document.getElementById(id).value) || '-';
+    const subject = isEn ? subjectEn : subjectTh;
+    const bodyLines = fields.map(([labelTh, labelEn, id]) => `${isEn ? labelEn : labelTh}: ${val(id)}`);
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = `mailto:vancoolver.official@outlook.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    if (confirmEl) confirmEl.classList.add('show');
+  });
+}
+</script>
+<script>
+  sendAsEmail(
+    document.getElementById('petForm'),
+    document.getElementById('confirmMsg'),
+    'สอบถามบริการพาสัตว์เลี้ยงมา จากเว็บไซต์ Vancoolver',
+    'Pet travel inquiry from Vancoolver website',
+    [
+      ['ชื่อ','Name','name'],
+      ['อีเมล','Email','email'],
+      ['เบอร์โทรศัพท์','Phone number','phone'],
+      ['ชนิดสัตว์เลี้ยง','Type of pet','pettype'],
+      ['สายพันธุ์ / น้ำหนัก','Breed / weight','breed'],
+      ['วันที่วางแผนเดินทาง','Planned travel date','traveldate'],
+      ['รายละเอียดเพิ่มเติม','Notes','notes'],
+    ]
+  );
+</script>
+</body>
+</html>
